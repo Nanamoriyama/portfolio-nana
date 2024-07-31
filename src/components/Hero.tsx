@@ -1,20 +1,29 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 import TextTyping from "../components/TypingAnimation";
 import { FaGithubSquare, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
 
 const Hero = () => {
   return (
     <div className="relative overflow-hidden h-screen">
-      {/* 背景動画 */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        src="/hero1.mp4"
-        autoPlay
-        loop
-        muted
-      />
+      {/* 背景ビデオまたは画像 */}
+      <div className="absolute top-0 left-0 w-full h-full">
+        <video
+          className="object-cover w-full h-full hidden md:block"
+          src="/hero1.mp4"
+          autoPlay
+          loop
+          muted
+        />
+        <Image
+          className="object-cover w-full h-full block md:hidden"
+          src="/images/mobile.jpg"
+          alt="Background"
+          width={480}
+          height={270}
+        />
+      </div>
 
       {/* メインコンテンツ */}
       <div className="relative p-4 bg-opacity-70">
