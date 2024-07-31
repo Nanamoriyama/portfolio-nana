@@ -1,0 +1,103 @@
+.projectContainer {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* 薄いボーダーを追加 */
+
+  background-color: white; /* 背景色を白に設定 */
+}
+
+.link {
+  display: block;
+  position: relative;
+  height: 0;
+  padding-bottom: 100%; /* 正方形を維持するための設定 */
+  background-color: transparent; /* 背景を透明に設定 */
+}
+
+.imageWrapper {
+  position: absolute;
+  width: 80%; /* ここを調整して画像の幅を小さくする */
+  height: 80%; /* 画像の高さを幅に合わせて調整 */
+  top: 50%; /* 画像を中央に配置するための設定 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image {
+  transform: scale(0.8); /* 初期状態で小さく表示 */
+  transition: transform 0.3s ease-in-out;
+}
+
+.projectTitle {
+  position: absolute;
+  bottom: -120%; /* 初期位置: ボックスの外 */
+  left: 0;
+  width: 100%;
+  text-align: left;
+  padding: 50px;
+
+  color: black; /* テキストカラーを黒に設定 */
+  transition: bottom 0.3s ease-in-out; /* アニメーションのトランジション */
+  z-index: 2; /* オーバーレイより上に表示 */
+  font-size: larger;
+  font-weight: bold;
+}
+
+.projectTool {
+  position: absolute;
+  bottom: -120%;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  padding-left: 50px;
+  color: black; /* テキストカラーを黒に設定 */
+  transition: bottom 0.4s ease-in-out; /* アニメーションのトランジション */
+  z-index: 2; /* オーバーレイより上に表示 */
+  font-size: larger;
+  font-weight: 100;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* 初期状態で透明 */
+  transition: background-color 0.3s ease-in-out;
+  z-index: 1; /* テキストの下、画像の上に表示 */
+}
+
+/* 各リンクのホバー時の色 */
+.wif:hover .overlay {
+  background-color: rgba(0, 255, 128, 0.8); /* 例: 赤色 */
+}
+
+.fashion:hover .overlay {
+  background-color: rgba(255, 217, 0, 0.8); /* 例: 黄色 */
+}
+
+.phonecase:hover .overlay {
+  background-color: rgba(115, 176, 237, 0.9); /* 例: 青色 */
+}
+
+.mimi33:hover .overlay {
+  background-color: rgba(164, 131, 193, 0.8); /* 例: 緑色 */
+}
+
+.comfy:hover .overlay {
+  background-color: rgba(237, 182, 237, 0.8); /* 例: ピンク色 */
+}
+
+.link:hover .projectTitle,
+.link:hover .projectTool {
+  bottom: 0; /* ボックスの上にスライドイン */
+}
+.link:hover .image {
+  transform: scale(1); /* 画像を元のサイズに戻す */
+}
+
+.link:hover {
+  cursor: url("/images/plus.png"), auto;
+}
