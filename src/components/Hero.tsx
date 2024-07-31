@@ -42,10 +42,7 @@ const Hero = () => {
                   <Link href="/projects">Projects</Link>
                 </li>
                 <li className="p-2">
-                  <Link href="/about">About Nana</Link>
-                </li>
-                <li className="p-2">
-                  <Link href="/info">Info</Link>
+                  <Link href="/about">About Me</Link>
                 </li>
               </ul>
             </article>

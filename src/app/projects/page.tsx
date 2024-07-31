@@ -15,6 +15,14 @@ const Projects = () => {
       <div className="bg-white mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 w-full p-8 justify-evenly">
         {[
           {
+            href: "/tfp",
+            img: "/images/treelogo.png",
+            alt: "Tfc",
+            title: "Travel Footprint Calculator",
+            className: styles.tfc,
+            tool: "React/TechLab Rotterdam",
+          },
+          {
             href: "/wif",
             img: "/images/wiflogo.jpg",
             alt: "Wif",

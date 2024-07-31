@@ -48,3 +48,19 @@ body {
 }
 
 /* 以下layout.css */
+/* スライドインアニメーション */
+/* スライドインアニメーション */
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animation-slide-in {
+  animation: slide-in 1s ease-out forwards;
+}
