@@ -31,7 +31,7 @@ const Page = () => {
       <div className="m-4 flex justify-between">
         <div>
           <h4 className="font-light text-3xl ml-8 mt-4 md:text-4xl">
-            Provate Event Bartender Website
+            Private Event Bartender Website
           </h4>
 
           <br />

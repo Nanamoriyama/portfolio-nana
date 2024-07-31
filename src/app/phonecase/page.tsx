@@ -37,7 +37,7 @@ const Page = () => {
           <br />
           <div className="flex items-center ml-8 md:m-8">
             <a
-              href="https://fashion-web-practice.vercel.app/"
+              href="https://phone-case-tau.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs font-bold md:text-base"
