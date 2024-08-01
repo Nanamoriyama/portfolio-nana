@@ -12,7 +12,7 @@ const Projects = () => {
         <TextTyping text="PROJECTS" />
       </div>
 
-      <div className="bg-white mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 w-full p-8 justify-evenly">
+      <div className="bg-white mx-auto grid grid-cols-2 text-xs md:grid-cols-3 gap-6 w-full p-8 justify-evenly md:text-sm ">
         {[
           {
             href: "/tfp",
