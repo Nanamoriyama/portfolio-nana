@@ -96,7 +96,16 @@ const Page = () => {
             how to compensate for your emissions. All of this would be
             incorporated into an application you can use to calculate your
             emissions and offset options whenever you make plans to travel.
+            <br />
+            <br />
+            In our project, I added a feature to find routes in both directions.
+            For example, if the user searches for a trip from London to
+            Amsterdam, but the data only has Amsterdam to London, our code will
+            still find and show the correct route information. I did this by
+            checking for both possible directions in the data, ensuring users
+            get results even if they search for a reverse route.
           </p>
+
           <ul className="ml-6 p-6">
             <li>Date: June 2024</li>
             <li>Category: Front-end</li>
