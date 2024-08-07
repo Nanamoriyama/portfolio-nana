@@ -10,18 +10,12 @@ const Hero = () => {
       {/* 背景ビデオまたは画像 */}
       <div className="absolute top-0 left-0 w-full h-full">
         <video
-          className="object-cover w-full h-full hidden md:block"
+          className="object-cover w-full h-full"
           src="/hero1.mp4"
           autoPlay
           loop
           muted
-        />
-        <Image
-          className="object-cover w-full h-full block md:hidden"
-          src="/images/mobile.jpg"
-          alt="Background"
-          width={480}
-          height={270}
+          playsInline
         />
       </div>
 

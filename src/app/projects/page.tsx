@@ -62,6 +62,14 @@ const Projects = () => {
             className: styles.comfy,
             tool: "React",
           },
+          {
+            href: "/tfp",
+            img: "/images/moriyamalogo.png",
+            alt: "Moriyama",
+            title: "Japanese School Moriyama",
+            className: styles.moriyama,
+            tool: "React/Next.js",
+          },
         ].map((project, index) => (
           <div key={index} className={styles.projectContainer}>
             <Link
