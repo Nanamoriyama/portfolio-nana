@@ -1,10 +1,17 @@
 import React from "react";
 import Link from "next/link";
-import TextTyping from "../components/TypingAnimation";
 import TextTypingMultiple from "../components/TextTypingMultiple";
 import { FaGithubSquare, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
 
 const Hero = () => {
+  const gradientStyle = {
+    background:
+      "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  };
+
   return (
     <div className="relative overflow-hidden h-screen">
       {/* 背景ビデオ */}
@@ -55,7 +62,7 @@ const Hero = () => {
       </div>
 
       {/* 右下のテキストコンテンツ */}
-      <div className="font-raleway absolute bottom-20 right-0 mb-16 mr-4 text-right bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-slate-700 via-slate-300 to-slate-900 bg-size-200% z-20">
+      <div className="font-raleway absolute bottom-20 right-0 mb-16 mr-4 text-right bg-clip-text text-stone-800 md:text-stone-200 bg-size-200% z-20">
         <p className="text-base capitalize tracking-wide">
           Born in Japan <br />
           In Amsterdam📍 <br />
@@ -67,14 +74,39 @@ const Hero = () => {
 
       {/* 画面一番下の中央に配置されたリンク */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-x-4 z-20">
-        <a href="https://github.com/Nanamoriyama">
-          <FaGithubSquare className="h-8 w-8 text-slate-700 hover:text-black duration-300" />
+        <a href="https://github.com/Nanamoriyama" className="github-icon">
+          <Image
+            src="/images/githubicon.png"
+            className=""
+            width={80}
+            height={80}
+            alt=""
+          />
         </a>
-        <a href="https://www.linkedin.com/in/nana-moriyama-5244b01b5/">
-          <FaLinkedin className="h-8 w-8 text-slate-700 hover:text-black duration-300" />
+        <a
+          href="https://www.linkedin.com/in/nana-moriyama-5244b01b5/"
+          className="linkedin-icon"
+        >
+          <Image
+            src="/images/linkedin.png"
+            className=""
+            width={80}
+            height={80}
+            alt=""
+          />
         </a>
-        <a href="https://www.instagram.com/nana226_/">
-          <FaInstagramSquare className="h-8 w-8 text-slate-700 hover:text-black duration-300" />
+        <a
+          href="https://www.instagram.com/nana226_/"
+          className="instagram-icon"
+          style={gradientStyle}
+        >
+          <Image
+            src="/images/instagramicon.png"
+            className=""
+            width={80}
+            height={80}
+            alt=""
+          />
         </a>
       </div>
     </div>

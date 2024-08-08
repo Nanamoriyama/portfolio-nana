@@ -31,7 +31,7 @@ const Page = () => {
       <div className="m-4 flex justify-between">
         <div>
           <h4 className="font-light text-3xl ml-8 mt-4 md:text-4xl">
-            Private Event Bartender Website
+            I made the website for my own Japanese language
           </h4>
 
           <br />

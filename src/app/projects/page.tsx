@@ -63,7 +63,7 @@ const Projects = () => {
             tool: "React",
           },
           {
-            href: "/tfp",
+            href: "/japaneseschool",
             img: "/images/moriyamalogo.png",
             alt: "Moriyama",
             title: "Japanese School Moriyama",

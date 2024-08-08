@@ -66,3 +66,27 @@ body {
 .animation-slide-in {
   animation: slide-in 1s ease-out forwards;
 }
+
+/* globals.css */
+
+.github-icon {
+  color: black; /* GitHubアイコンを黒に */
+}
+
+.linkedin-icon {
+  color: #0e76a8; /* LinkedInアイコンを青に */
+}
+
+.instagram-icon {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

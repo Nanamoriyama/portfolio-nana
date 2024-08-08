@@ -26,21 +26,9 @@ const Page = () => {
             Travel Foot Print Calculator
           </h4>
           <p className="m-4 p-2 mr-2 text-xs md:ml-6 md:mb-0 md:text-base">
-            <a
-              href="https://medium.com/@techlabs.rotterdam/travel-footprint-calculator-making-your-travels-more-sustainable-d1f9bc52a7fe"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-bold md:text-base"
-            >
-              Click Here
-            </a>
-            <span className="p-2">to check the project summary</span>
-            <br />
             TechLab Group Project
             <br />
-            together with Data science Team and UX/UI Team.
-            <br />
-            We receive the award.🏆
+            Together with Data Science team and UX/UI team.
           </p>
           <br />
           <div className="flex items-center ml-8 md:ml-8">
@@ -61,9 +49,21 @@ const Page = () => {
             </a>
           </div>
           <p className="m-6 p-4 md:p-14">
-            With this app, you can see the difference in emissions between
-            plane, car and train after that, you can choose the offset options
-            whenever you make plans to travel. <br />
+            We receive the award🏆
+            <p>
+              <a
+                href="https://medium.com/@techlabs.rotterdam/travel-footprint-calculator-making-your-travels-more-sustainable-d1f9bc52a7fe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-bold md:text-base"
+              >
+                Click Here
+              </a>
+              <span className="p-2">to check the project summary.</span>
+            </p>
+            <br /> With this app, you can see the difference in emissions
+            between plane, car and train after that, you can choose the offset
+            options whenever you make plans to travel. <br />
             <br />
             Introduction What are the ideas behind your project? For which
             problem should a solution be found? A lot of people like to travel,
