@@ -22,7 +22,7 @@ const Page = () => {
         <Image
           className="object-cover"
           src="/images/moriyamalogo.png"
-          alt="Mimi Logo"
+          alt="Moriyama Logo"
           width={100}
           height={100}
         />
@@ -31,11 +31,14 @@ const Page = () => {
       <div className="m-4 flex justify-between">
         <div>
           <h4 className="font-light text-3xl ml-8 mt-4 md:text-4xl">
-            I made the website for my own Japanese language
+            Japanese Language School Moriyama
           </h4>
 
           <br />
           <div className="flex items-center ml-8 md:m-8">
+            <div className="">
+              <Image src="/images/link.png" width={40} height={0} alt="" />
+            </div>
             <a
               href="https://moriyama.vercel.app/"
               target="_blank"
@@ -44,30 +47,24 @@ const Page = () => {
             >
               https://moriyama.vercel.app/
             </a>
-            <span className="ml-2 h-2.5 w-2.5 rounded-full bg-green-500"></span>
+
             <a
-              href="https://github.com/Nanamoriyama/privateBartender/tree/main"
-              className="text-slate-700 hover:text-black duration-300"
+              href="https://github.com/Nanamoriyama/JapaneseSchool"
+              className="github-icon hover:duration-300"
             >
-              <FaGithubSquare className="h-6 w-6 ml-6" />
+              <Image
+                src="/images/githubicon.png"
+                height={60}
+                width={60}
+                alt=""
+              />
             </a>
           </div>
           <p className="m-6 p-4 md:p-14">
-            For this project, I utilized React Toastify to provide users with
-            elegant notifications and alerts, enhancing the user experience by
-            displaying success, error, and informational messages seamlessly.
-            Additionally, I implemented a cocktail search form that fetches
-            drinks from an API, allowing users to search for and discover
-            various cocktail recipes.
-            <br />
-            <br />
-            To manage server state and efficiently fetch data, I incorporated
-            React Query. This library handles data fetching, caching,
-            synchronization, and background updates, ensuring that the
-            application's data is always up-to-date and providing a smooth,
-            responsive interface. This combination of technologies not only
-            streamlined the development process but also significantly improved
-            the overall performance and user experience of the application.
+            Next.js and Typescript Project.
+            <br />I made a website for my own Japanese language school. Later I
+            am planning to add more pages for Blog, language & culture Quiz and
+            word dictionary by different levels.
           </p>
           <ul className="ml-6 p-6">
             <li>Date: May 2024</li>
@@ -79,11 +76,11 @@ const Page = () => {
       <div className="flex flex-wrap justify-evenly">
         <div
           className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/m1.png")}
+          onClick={() => openModal("/images/mphone.png")}
         >
           <Image
             className="object-cover"
-            src="/images/m1.png"
+            src="/images/mphone.png"
             alt="Screenshot 1"
             width={400}
             height={200}
@@ -91,11 +88,23 @@ const Page = () => {
         </div>
         <div
           className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/m2.png")}
+          onClick={() => openModal("/images/mo1.png")}
         >
           <Image
             className="object-cover"
-            src="/images/m2.png"
+            src="/images/mo1.png"
+            alt="Screenshot 2"
+            width={400}
+            height={200}
+          />
+        </div>
+        <div
+          className="bg-white border p-6 m-2 cursor-pointer"
+          onClick={() => openModal("/images/mo2.png")}
+        >
+          <Image
+            className="object-cover"
+            src="/images/mo2.png"
             alt="Screenshot 2"
             width={400}
             height={200}

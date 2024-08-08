@@ -22,7 +22,7 @@ const Page = () => {
         <Image
           className="object-cover"
           src="/images/logo.svg"
-          alt="WIF Logo"
+          alt="Logo"
           width={280}
           height={200}
         />
@@ -39,6 +39,9 @@ const Page = () => {
           </p>
           <br />
           <div className="flex items-center m-4 md:m-6">
+            <div className="">
+              <Image src="/images/link.png" width={40} height={0} alt="" />
+            </div>
             <a
               href="https://fashion-web-practice.vercel.app/"
               target="_blank"
@@ -47,12 +50,17 @@ const Page = () => {
             >
               https://fashion-web-practice.vercel.app/
             </a>
-            <span className="ml-2 h-2.5 w-2.5 rounded-full bg-green-500"></span>
+
             <a
               href="https://github.com/Nanamoriyama/fashion-web"
-              className="text-slate-700 hover:text-black duration-300"
+              className="github-icon hover:duration-300"
             >
-              <FaGithubSquare className="h-6 w-6 ml-6" />
+              <Image
+                src="/images/githubicon.png"
+                height={60}
+                width={60}
+                alt=""
+              />
             </a>
           </div>
           <p className="m-6 p-4 md:p-14">

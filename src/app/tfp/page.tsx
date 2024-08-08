@@ -22,30 +22,38 @@ const Page = () => {
 
       <div className="m-4 flex justify-between">
         <div>
-          <h4 className="font-light text-3xl m-4 md:text-4xl">
+          <h4 className="font-raleway font-light text-3xl m-4 md:text-4xl">
             Travel Foot Print Calculator
           </h4>
-          <p className="m-4 p-2 mr-2 text-xs md:ml-6 md:mb-0 md:text-base">
+          <p className="font-raleway m-4 p-2 mr-2 text-sm md:ml-6 md:mb-0 md:text-base">
             TechLab Group Project
             <br />
             Together with Data Science team and UX/UI team.
           </p>
           <br />
-          <div className="flex items-center ml-8 md:ml-8">
+          <div className="flex items-center ml-4 md:ml-8">
+            <div className="">
+              <Image src="/images/link.png" width={40} height={0} alt="" />
+            </div>
             <a
               href="https://tfc.nanamoriyama.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-bold md:text-base"
+              className="text-base font-bold md:text-base"
             >
               https://tfc.nanamoriyama.com/
             </a>
-            <span className="ml-2 h-2.5 w-2.5 rounded-full bg-green-500"></span>
+
             <a
               href="https://github.com/Nanamoriyama/travel-footprint-calculator"
-              className="text-slate-700 hover:text-black duration-300"
+              className="github-icon hover:duration-300"
             >
-              <FaGithubSquare className="h-6 w-6 ml-6" />
+              <Image
+                src="/images/githubicon.png"
+                height={60}
+                width={60}
+                alt=""
+              />
             </a>
           </div>
           <p className="m-6 p-4 md:p-14">

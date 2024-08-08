@@ -67,26 +67,17 @@ body {
   animation: slide-in 1s ease-out forwards;
 }
 
-/* globals.css */
-
-.github-icon {
-  color: black; /* GitHubアイコンを黒に */
+.github-icon:hover {
+  transform: translateY(-5px); /* 少し上に動かす */
+  transition: transform 0.3s ease-in-out; /* アニメーションを追加 */
 }
 
-.linkedin-icon {
-  color: #0e76a8; /* LinkedInアイコンを青に */
+.linkedin-icon:hover {
+  transform: translateY(-5px); /* 少し上に動かす */
+  transition: transform 0.3s ease-in-out; /* アニメーションを追加 */
 }
 
-.instagram-icon {
-  background: linear-gradient(
-    45deg,
-    #f09433,
-    #e6683c,
-    #dc2743,
-    #cc2366,
-    #bc1888
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.instagram-icon:hover {
+  transform: translateY(-5px); /* 少し上に動かす */
+  transition: transform 0.3s ease-in-out; /* アニメーションを追加 */
 }

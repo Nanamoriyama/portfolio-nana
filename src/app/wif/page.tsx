@@ -33,15 +33,17 @@ const Page = () => {
             Recruitment platform
           </h4>
           <div className="flex items-center">
+            <div className="">
+              <Image src="/images/link.png" width={40} height={0} alt="" />
+            </div>
             <a
               href="https://world-in-freelance.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="m-4 text-xs md:m-6 md:text-base"
+              className="text-sm font-bold md:text-base"
             >
               https://world-in-freelance.vercel.app/
             </a>
-            <span className="h-2.5 w-2.5 rounded-full bg-green-500 inline-block"></span>
           </div>
           <p className="m-6 p-4 md:p-14">
             My Contributions:
