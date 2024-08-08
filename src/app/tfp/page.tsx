@@ -56,9 +56,9 @@ const Page = () => {
               />
             </a>
           </div>
-          <p className="m-6 p-4 md:p-14">
+          <div className="m-6 p-4 md:p-14">
             We receive the award🏆
-            <p>
+            <div>
               <a
                 href="https://medium.com/@techlabs.rotterdam/travel-footprint-calculator-making-your-travels-more-sustainable-d1f9bc52a7fe"
                 target="_blank"
@@ -68,7 +68,7 @@ const Page = () => {
                 Click Here
               </a>
               <span className="p-2">to check the project summary.</span>
-            </p>
+            </div>
             <br /> With this app, you can see the difference in emissions
             between plane, car and train after that, you can choose the offset
             options whenever you make plans to travel. <br />
@@ -112,7 +112,7 @@ const Page = () => {
             still find and show the correct route information. I did this by
             checking for both possible directions in the data, ensuring users
             get results even if they search for a reverse route.
-          </p>
+          </div>
 
           <ul className="ml-6 p-6">
             <li>Date: June 2024</li>
@@ -150,7 +150,7 @@ const Page = () => {
           className="bg-white border p-6 m-2 cursor-pointer"
           onClick={() => openModal("/images/tfc6.png")}
         >
-          <p>We discussed ideas on Miro Boad </p>
+          <p>We discussed ideas on Miro Board</p>
           <Image
             className="object-cover"
             src="/images/tfc6.png"
