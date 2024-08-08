@@ -8,7 +8,7 @@ const About = () => {
     <>
       {/* 3/4 screen height text section with slide-in animation */}
       <div className="mt-20 pt-20 h-3/4 flex flex-col justify-center items-center text-stone-700 text-6xl space-y-4">
-        <div className="text-center animation-slide-in">
+        <div className="font-raleway text-center animation-slide-in">
           <span className="block animate-slide-in delay-1">A Little Bit</span>
           <span className="block text-green-300 animate-slide-in delay-2">
             About Me

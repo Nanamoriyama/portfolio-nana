@@ -4,10 +4,10 @@ import { FaGithubSquare, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <div className="flex flex-col items-center font-light sm:flex-row justify-between bg-stone-200 p-10 md:p-16">
+      <div className="font-raleway flex flex-col items-center font-light sm:flex-row justify-between bg-stone-200 p-10 md:p-16">
         <div className="mb-10 sm:mb-0">
           <h4 className="font-normal text-lg pb-2">Nana Moriyama</h4>
-          <h4>Front-End Developer</h4>
+          <h4 className="text-xs flex justify-center">Front-End Developer</h4>
         </div>
         <div className="mb-10 sm:mb-0 flex flex-col items-center sm:items-start sm:text-left">
           <h4 className="font-normal text-lg pb-2">Contact</h4>
