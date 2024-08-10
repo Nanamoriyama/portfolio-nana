@@ -18,12 +18,26 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-full">
         <video
           className="object-cover w-full h-1/2 md:h-full"
-          src="/hero1.mp4"
           autoPlay
           loop
           muted
           playsInline
-        />
+        >
+          {/* デスクトップ用のビデオ */}
+          <source
+            src="/hero1.mp4"
+            type="video/mp4"
+            media="(min-width: 768px)"
+          />
+          {/* モバイル用のビデオ */}
+          <source
+            src="/dolphinmobile.mp4"
+            type="video/mp4"
+            media="(max-width: 767px)"
+          />
+          {/* 代替テキスト */}
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       {/* 下半分の背景カラー */}
@@ -62,7 +76,7 @@ const Hero = () => {
       </div>
 
       {/* 右下のテキストコンテンツ */}
-      <div className="font-raleway absolute bottom-20 right-0 mb-16 mr-4 text-right bg-clip-text text-stone-800 md:text-stone-200 bg-size-200% z-20">
+      <div className="font-raleway absolute bottom-20 right-0 mb-10 mr-4 text-right bg-clip-text text-stone-800 md:text-stone-200 bg-size-200% z-20">
         <p className="text-base capitalize tracking-wide">
           Born in Japan <br />
           In Amsterdam📍 <br />

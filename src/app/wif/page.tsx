@@ -46,7 +46,7 @@ const Page = () => {
             </a>
           </div>
           <p className="m-6 p-4 md:p-14">
-            My Contributions:
+            Summary:
             <br />
             I refactored the original codebase, separating it into more
             understandable and maintainable components. I updated the project to
