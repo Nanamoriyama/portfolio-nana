@@ -42,9 +42,8 @@ const Footer = () => {
             </a>
           </div>
           <p className="text-center">
-            © 2024 Nana Moriyama
+            ©NanaMoriyama
             <br />
-            ALL RIGHTS RESERVED
           </p>
         </div>
       </div>

@@ -32,7 +32,7 @@ const Projects = () => {
           },
           {
             href: "/fashion",
-            img: "/images/logo.svg",
+            img: "/images/logo.png",
             alt: "Fashion",
             title: "Fashion Website",
             className: styles.fashion,
