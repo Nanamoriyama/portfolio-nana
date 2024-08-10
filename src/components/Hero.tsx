@@ -5,13 +5,6 @@ import { FaGithubSquare, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 
 const Hero = () => {
-  const gradientStyle = {
-    background:
-      "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-  };
-
   return (
     <div className="relative overflow-hidden h-screen">
       {/* 背景ビデオ */}
@@ -76,7 +69,7 @@ const Hero = () => {
       </div>
 
       {/* 右下のテキストコンテンツ */}
-      <div className="font-raleway absolute bottom-20 right-0 mb-10 mr-4 text-right bg-clip-text text-stone-800 md:text-stone-200 bg-size-200% z-20">
+      <div className="font-raleway absolute bottom-24 right-0 mb-2 mr-4 text-right bg-clip-text text-stone-800 md:text-stone-200 bg-size-200% z-20">
         <p className="text-base capitalize tracking-wide">
           Born in Japan <br />
           In Amsterdam📍 <br />
@@ -112,7 +105,6 @@ const Hero = () => {
         <a
           href="https://www.instagram.com/nana226_/"
           className="instagram-icon"
-          style={gradientStyle}
         >
           <Image
             src="/images/instagramicon.png"
