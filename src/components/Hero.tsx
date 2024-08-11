@@ -24,7 +24,7 @@ const Hero = () => {
           />
           {/* モバイル用のビデオ */}
           <source
-            src="/dolphinmobile.mp4"
+            src="/dolphin.mp4"
             type="video/mp4"
             media="(max-width: 767px)"
           />
