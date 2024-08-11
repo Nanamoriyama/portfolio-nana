@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import TextTypingMultiple from "../components/TextTypingMultiple";
-import { FaGithubSquare, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
+
 import Image from "next/image";
 
 const Hero = () => {
@@ -15,6 +15,7 @@ const Hero = () => {
           loop
           muted
           playsInline
+          preload="auto" // 追加
         >
           {/* デスクトップ用のビデオ */}
           <source
