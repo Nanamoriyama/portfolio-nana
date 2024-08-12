@@ -3,13 +3,12 @@ import Link from "next/link";
 
 interface VideoBackgroundProps {
   desktopSrc: string;
-  mobileSrc: string;
   className?: string;
 }
 
 const VideoBackground: React.FC<VideoBackgroundProps> = ({
   desktopSrc,
-  mobileSrc,
+
   className = "",
 }) => {
   return (
@@ -23,9 +22,11 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({
         preload="auto"
       >
         {/* デスクトップ用のビデオ */}
-        <source src={desktopSrc} type="video/mp4" media="(min-width: 768px)" />
-        {/* モバイル用のビデオ */}
-        <source src={mobileSrc} type="video/mp4" media="(max-width: 767px)" />
+        <source
+          src="/degital.mp4"
+          type="video/mp4"
+          media="(min-width: 768px)"
+        />
         {/* 代替テキスト */}
         Your browser does not support the video tag.
       </video>

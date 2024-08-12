@@ -2,7 +2,10 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import VideoBackground from "./videoBackground"; // ビデオコンポーネントのインポート
+import VideoBackground from "./videoBackground";
+import dynamic from "next/dynamic";
+
+const Scene = dynamic(() => import("@/components/Scene"), { ssr: false });
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,8 +27,7 @@ const Hero = () => {
       {/* 背景ビデオ */}
       <div className="absolute top-0 left-0 w-full h-full">
         <VideoBackground
-          desktopSrc="/hero1.mp4"
-          mobileSrc="/dolphin.mp4"
+          desktopSrc="/degital.mp4"
           className="h-1/2 md:h-full"
         />
       </div>
@@ -33,9 +35,14 @@ const Hero = () => {
       {/* 下半分の背景カラー */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-stone-300 via-transparent to-transparent md:hidden"></div>
 
+      {/* Centered Scene Component */}
+      <div className="absolute inset-0 flex mt-16 pt-10 items-center justify-center z-10 pointer-events-none">
+        <Scene />
+      </div>
+
       {/* メインコンテンツ (デスクトップ・モバイル共通) */}
-      <div className="relative p-4 bg-opacity-70">
-        <div className="py-16 font-light font-serif bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-slate-900 via-slate-200 to-slate-900 bg-size-200%">
+      <div className="relative p-4 bg-opacity-70 z-20">
+        <div className="py-16 font-light font-serif bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-slate-50 via-pink-500 to-slate-50 bg-size-200%">
           <div className="align-element grid md:grid-cols-2 items-start justify-start gap-8">
             <article className="md:ml-8 md:mt-2">
               <h1 className="text-3xl font-extralight tracking-wider">
@@ -59,7 +66,7 @@ const Hero = () => {
       </div>
 
       {/* 中央のテキストコンテンツ (Born in Japan) */}
-      <div className="font-raleway absolute bottom-52 left-1/2 transform -translate-x-1/2 text-left bg-clip-text  whitespace-nowrap text-stone-800 md:text-stone-200 bg-size-200% z-20">
+      <div className="font-raleway absolute bottom-40 left-1/2 transform -translate-x-1/2 text-left bg-clip-text whitespace-nowrap text-stone-800 md:text-stone-200 bg-size-200% z-20">
         <p className="text-base capitalize tracking-wide">
           Born in Japan <br />
           In Amsterdam📍 <br />
