@@ -5,79 +5,100 @@ import Image from "next/image";
 const About = () => {
   return (
     <>
-      {/* 3/4 screen height text section with slide-in animation */}
-      <div className="h-3/4 flex flex-col justify-center items-center space-y-4">
-        <div className="text-center flex mb-2">
-          <span className="flex">
-            <span className="pt-10 mt-5 hidden lg:block">
-              <Image src="/images/about4.png" width={300} height={300} alt="" />
-            </span>
-            <Image
-              src="/images/about1.png"
-              className="w-46 h-46 md:w-96 md:h-96"
-              width={400}
-              height={400}
-              alt=""
-            />
-          </span>
-          <span className="flex">
-            <Image
-              src="/images/about3.png"
-              className="w-46 h-46 md:w-96 md:h-96"
-              width={400}
-              height={400}
-              alt=""
-            />
-          </span>
+      <div
+        className="overflow-hidden relative bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/bg3.png')" }}
+      >
+        <div className="text-5xl md:text-6xl font-semibold font-serif animate-slide-in-left text-center mt-24">
+          A Little Bit <br />
+          <span className="text-blue-300 pl-10"> About Me</span>
         </div>
-      </div>
 
-      {/* Content section with image and text */}
-      <section className="animation-slide-in font-serif">
-        <div className="align-element grid md:grid-cols-2 items-start">
-          <div className="flex flex-col md:mt-6 items-center">
+        <div className="h-screen flex flex-col justify-center items-center md:flex-row md:justify-between">
+          <div className="block md:hidden animate-slide-in-left">
             <Image
-              src="/images/icon2.png"
-              className="w-72 h-72 rounded-full object-cover"
-              width={260}
-              height={260}
+              src="/images/nanap1.png"
+              className="object-cover mb-4 mr-6 mt-6"
+              width={300}
+              height={300}
               alt="Profile picture of Nana Moriyama"
-            />
-            <Image
-              src="/images/podu1.png"
-              className="w-54 h-54 rounded-full object-cover mt-4 pb-4 pl-3 ml-12 hidden md:block transform translate-x-12"
-              width={200}
-              height={200}
-              alt="Profile picture of Nana Moriyama"
+              quality={100}
             />
           </div>
-          <article className="text-left p-6 md:mr-4">
-            Hi!
-            <br />
-            I'm originally from Osaka, Japan, but I've been calling the
-            Netherlands my home for the last 8 years. In this time, I founded my
-            own Japanese language school, helped launch two Japanese restaurants
-            in Utrecht, and managed them with the owners.
-            <br />
-            <br />
-            I've always been curious how I can make websites for my Japanese
-            school, which led me to dive into web development. I started my tech
-            journey with the Udemy Web Developer Bootcamp in 2023, where I
-            learned HTML, CSS, JavaScript, node.js,Json, axios and express.js.
-            That’s where I fell in love with making things that people can
-            actually interact with online. I've also explored React, TypeScript,
-            Next.js, AWS, MongoDB, Auth0, Firebase, and Redux to round out my
-            skills. I believe that UX is key to gaining a competitive advantage
-            and realize this requires incorporating cutting-edge technologies. I
-            am continuously learning the field.
-            <br />
-            <br />
-            In addition, to improve my problem-solving skills, I do LeetCode
-            daily. <br />I love putting all these tools to use to bring awesome
-            ideas to life. Let’s make something great together!
-          </article>
+
+          <div className="hidden md:flex md:w-1/4 flex-col justify-center items-center space-y-4">
+            <div className="flex flex-col items-center space-y-4">
+              <Image
+                src="/images/nanap1.png"
+                className="object-cover ml-2"
+                width={300}
+                height={300}
+                alt="Profile picture of Nana Moriyama"
+                quality={100}
+              />
+            </div>
+          </div>
+
+          <div className="flex-grow w-full md:w-1/2 overflow-y-auto p-6 md:p-10 md:mt-5">
+            <div className="align-element">
+              <article className="text-left leading-relaxed text-lg md:text-xl text-gray-800">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Hi!</h2>
+                <p>
+                  I'm originally from Osaka, Japan, but I've been calling the
+                  Netherlands my home for the last 8 years. In this time, I
+                  founded my own Japanese language school, helped launch two
+                  Japanese restaurants in Utrecht, and managed them with the
+                  owners.
+                </p>
+                <br />
+                <p>
+                  I've always been curious how I can make websites for my
+                  Japanese school, which led me to dive into web development. I
+                  started my tech journey with the Udemy Web Developer Bootcamp
+                  in 2023, where I learned HTML, CSS, JavaScript, node.js, Json,
+                  axios, and express.js. That’s where I fell in love with making
+                  things that people can actually interact with online. I've
+                  also explored React, TypeScript, Next.js, AWS, MongoDB, Auth0,
+                  Firebase, and Redux to round out my skills.
+                </p>
+                <br />
+                <p>
+                  I believe that UX is key to gaining a competitive advantage
+                  and realize this requires incorporating cutting-edge
+                  technologies. I am continuously learning the field. In
+                  addition, to improve my problem-solving skills, I do LeetCode
+                  daily.
+                </p>
+                <br />
+                <p>
+                  I love putting all these tools to use to bring awesome ideas
+                  to life. Let’s make something great together!
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div className="hidden md:flex md:w-1/4 flex-col justify-center items-center space-y-4">
+            <div className="flex flex-col items-center space-y-4">
+              <Image
+                src="/images/cat3.png"
+                className="object-cover"
+                width={300}
+                height={300}
+                alt="Profile picture of Nana Moriyama"
+              />
+              <div className="text-right text-3xl font-base leading-relaxed text-gray-800 animate-slide-in-up">
+                <span className="block pr-10">
+                  こ<br />ん<br />に<br />ち<br />は
+                </span>
+                <span className="block mt-6 pr-24">
+                  森<br />山<br />で<br />す
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
       <Footer />
     </>
   );

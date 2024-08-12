@@ -1,33 +1,38 @@
 import Image from "next/image";
 import React from "react";
-import { FaGithubSquare, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
+import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <>
-      <div className="font-raleway flex flex-col items-center font-light sm:flex-row justify-between bg-stone-200 p-10 md:p-16">
-        <div className="mb-10 sm:mb-0 text-center">
-          <a href="/">
+    <div className="bg-stone-300">
+      <div className="font-raleway flex flex-col md:flex-row items-center justify-between p-4 md:p-10 min-h-screen md:min-h-0 md:h-auto relative">
+        {/* 左側のコンテンツ */}
+        <div className="mb-10 md:mb-0 text-center flex-1 flex justify-center">
+          <a href="/" className="group">
             <Image
               src="/images/footer1.png"
               alt="Footer 1"
-              height={240} // heightを240に設定してfooter2と揃える
-              width={240} // widthを240に設定
-              className="object-contain" // 画像が指定された範囲に収まるようにする
+              height={240}
+              width={240}
+              className="object-contain transform transition-transform duration-300 group-hover:-translate-y-2"
             />
           </a>
         </div>
-        <div className="mb-10 sm:mb-0 flex flex-col items-center sm:items-start sm:text-left">
+
+        {/* 中央のコンテンツ */}
+        <div className="mb-10 md:mb-0 flex flex-col items-center md:items-start md:text-left flex-1 md:ml-10">
           <Image
             src="/images/footer2.png"
-            width={300} // heightとwidthをfooter1と揃える
+            width={300}
             height={300}
             alt="Footer 2"
-            className="object-contain md:pt-6" // 画像が指定された範囲に収まるようにする
+            className="object-contain md:pt-6"
           />
         </div>
-        <div className="flex flex-col items-center space-y-4">
-          <div className="flex justify-between mb-10 space-x-4">
+
+        {/* 右側のコンテンツ */}
+        <div className="flex flex-col items-center space-y-4 flex-1">
+          <div className="flex justify-center mb-10 space-x-4">
             <a
               href="https://github.com/Nanamoriyama"
               className="text-slate-700 hover:text-black duration-300"
@@ -41,13 +46,14 @@ const Footer = () => {
               <FaLinkedin className="h-8 w-8" />
             </a>
           </div>
-          <p className="text-center">
-            ©NanaMoriyama
-            <br />
-          </p>
         </div>
       </div>
-    </>
+
+      {/* コピーライトを画面下部に配置 */}
+      <p className="text-center p-4 font-extralight bg-stone-300">
+        ©NanaMoriyama
+      </p>
+    </div>
   );
 };
 

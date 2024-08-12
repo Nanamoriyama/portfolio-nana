@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import TextTypingMultiple from "../components/TextTypingMultiple";
 import Image from "next/image";
+import VideoBackground from "./videoBackground"; // ビデオコンポーネントのインポート
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,55 +10,30 @@ const Hero = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true); // 0.5秒後にフェードイン開始
-    }, 500);
+    }, 400);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div
-      className={`relative overflow-hidden h-screen transition-opacity duration-1000 ease-in-out ${
+      className={`relative overflow-hidden h-screen transition-opacity duration-800 ease-in-out ${
         isVisible ? "fade-in" : "opacity-0"
       }`}
     >
       {/* 背景ビデオ */}
       <div className="absolute top-0 left-0 w-full h-full">
-        <video
-          className="object-cover w-full h-1/2 md:h-full"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-        >
-          {/* デスクトップ用のビデオ */}
-          <source
-            src="/hero1.mp4"
-            type="video/mp4"
-            media="(min-width: 768px)"
-          />
-          {/* モバイル用のビデオ */}
-          <source
-            src="/dolphin.mp4"
-            type="video/mp4"
-            media="(max-width: 767px)"
-          />
-          {/* 代替テキスト */}
-          Your browser does not support the video tag.
-        </video>
+        <VideoBackground
+          desktopSrc="/hero1.mp4"
+          mobileSrc="/dolphin.mp4"
+          className="h-1/2 md:h-full"
+        />
       </div>
 
       {/* 下半分の背景カラー */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-stone-300 via-transparent to-transparent md:hidden"></div>
 
-      {/* モバイル表示用のテキスト */}
-      <div className="md:hidden absolute pr-4 top-1/2 w-full z-20">
-        <TextTypingMultiple
-          texts={["こんにちは", "Hoi", "Hola", "Bonjour", "नमस्ते", "வணக்கம்"]}
-        />
-      </div>
-
-      {/* メインコンテンツ */}
+      {/* メインコンテンツ (デスクトップ・モバイル共通) */}
       <div className="relative p-4 bg-opacity-70">
         <div className="py-16 font-light font-serif bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-slate-900 via-slate-200 to-slate-900 bg-size-200%">
           <div className="align-element grid md:grid-cols-2 items-start justify-start gap-8">
@@ -84,7 +59,7 @@ const Hero = () => {
       </div>
 
       {/* 右下のテキストコンテンツ */}
-      <div className="font-raleway absolute bottom-24 right-0 mb-2 mr-4 text-right bg-clip-text text-stone-800 md:text-stone-200 bg-size-200% z-20">
+      <div className="font-raleway absolute bottom-28 right-0 mr-4 text-right bg-clip-text text-stone-800 md:text-stone-200 bg-size-200% z-20">
         <p className="text-base capitalize tracking-wide">
           Born in Japan <br />
           In Amsterdam📍 <br />
@@ -95,7 +70,7 @@ const Hero = () => {
       </div>
 
       {/* 画面一番下の中央に配置されたリンク */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-x-4 z-20">
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex gap-x-4 z-20">
         <a href="https://github.com/Nanamoriyama" className="github-icon">
           <Image
             src="/images/githubicon.png"
