@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import VideoBackground from "./videoBackground";
 import dynamic from "next/dynamic";
-import { PiMouseScroll } from "react-icons/pi";
 
 const Scene = dynamic(() => import("@/components/Scene"), { ssr: false });
 
@@ -29,6 +28,7 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-full">
         <VideoBackground
           desktopSrc="/degital.mp4"
+          mobileSrc="/degitalmobile.mp4"
           className="h-1/3 md:h-full"
         />
       </div>
@@ -85,7 +85,7 @@ const Hero = () => {
             className=""
             width={80}
             height={80}
-            alt=""
+            alt="GitHub"
           />
         </a>
         <a
@@ -97,7 +97,7 @@ const Hero = () => {
             className=""
             width={80}
             height={80}
-            alt=""
+            alt="LinkedIn"
           />
         </a>
         <a
@@ -109,7 +109,7 @@ const Hero = () => {
             className=""
             width={80}
             height={80}
-            alt=""
+            alt="Instagram"
           />
         </a>
       </div>
