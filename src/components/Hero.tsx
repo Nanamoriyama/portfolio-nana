@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import VideoBackground from "./videoBackground";
 import dynamic from "next/dynamic";
+import { PiMouseScroll } from "react-icons/pi";
 
 const Scene = dynamic(() => import("@/components/Scene"), { ssr: false });
 
@@ -28,14 +29,14 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-full">
         <VideoBackground
           desktopSrc="/degital.mp4"
-          className="h-1/2 md:h-full"
+          className="h-1/3 md:h-full"
         />
       </div>
 
       {/* 下半分の背景カラー */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-stone-300 via-transparent to-transparent md:hidden"></div>
 
-      {/* Centered Scene Component */}
+      {/* Centered Scene Component with Mouse Scroll Icon */}
       <div className="absolute inset-0 flex mt-16 pt-10 items-center justify-center z-10 pointer-events-none">
         <Scene />
       </div>
