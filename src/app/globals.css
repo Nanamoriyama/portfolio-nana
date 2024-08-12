@@ -81,3 +81,16 @@ body {
   transform: translateY(-5px); /* 少し上に動かす */
   transition: transform 0.3s ease-in-out; /* アニメーションを追加 */
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in-out forwards;
+}

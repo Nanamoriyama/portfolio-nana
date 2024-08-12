@@ -1,12 +1,26 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import TextTypingMultiple from "../components/TextTypingMultiple";
-
 import Image from "next/image";
 
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true); // 0.5秒後にフェードイン開始
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="relative overflow-hidden h-screen">
+    <div
+      className={`relative overflow-hidden h-screen transition-opacity duration-1000 ease-in-out ${
+        isVisible ? "fade-in" : "opacity-0"
+      }`}
+    >
       {/* 背景ビデオ */}
       <div className="absolute top-0 left-0 w-full h-full">
         <video
@@ -15,7 +29,7 @@ const Hero = () => {
           loop
           muted
           playsInline
-          preload="auto" // 追加
+          preload="auto"
         >
           {/* デスクトップ用のビデオ */}
           <source
