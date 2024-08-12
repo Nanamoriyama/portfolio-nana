@@ -15,10 +15,5 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  return (
-    <>
-      {isLoading ? <LoadingScreen /> : <Hero />}
-      {!isLoading && <Footer />}
-    </>
-  );
+  return <>{isLoading ? <LoadingScreen /> : <Hero />}</>;
 }

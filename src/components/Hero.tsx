@@ -58,8 +58,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* 右下のテキストコンテンツ */}
-      <div className="font-raleway absolute bottom-28 right-0 mr-4 text-right bg-clip-text text-stone-800 md:text-stone-200 bg-size-200% z-20">
+      {/* 中央のテキストコンテンツ (Born in Japan) */}
+      <div className="font-raleway absolute bottom-52 left-1/2 transform -translate-x-1/2 text-left bg-clip-text  whitespace-nowrap text-stone-800 md:text-stone-200 bg-size-200% z-20">
         <p className="text-base capitalize tracking-wide">
           Born in Japan <br />
           In Amsterdam📍 <br />
@@ -70,7 +70,7 @@ const Hero = () => {
       </div>
 
       {/* 画面一番下の中央に配置されたリンク */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex gap-x-4 z-20">
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex gap-x-4 z-20">
         <a href="https://github.com/Nanamoriyama" className="github-icon">
           <Image
             src="/images/githubicon.png"

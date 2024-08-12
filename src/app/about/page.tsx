@@ -70,7 +70,7 @@ const About = () => {
                   daily.
                 </p>
                 <br />
-                <p>
+                <p className="mb-4">
                   I love putting all these tools to use to bring awesome ideas
                   to life. Let’s make something great together!
                 </p>
