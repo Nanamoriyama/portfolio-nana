@@ -11,23 +11,32 @@ const Scene = dynamic(() => import("@/components/Scene"), { ssr: false });
 const Hero: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isHeroVisible, setIsHeroVisible] = useState(false);
-  const [isImageVisible, setIsImageVisible] = useState(false); // 背景画像のフェードイン制御
+  const [isImageVisible, setIsImageVisible] = useState(false); // Background image fade-in control
+  const [isLogoVisible, setIsLogoVisible] = useState(false); // Logo fade-in control
 
   useEffect(() => {
+    // Shorten the loading time to 2 seconds
     const loadingTimer = setTimeout(() => {
       setIsLoading(false);
-      setIsHeroVisible(true); // Loadingが終わると同時にHeroを表示
-    }, 3500);
+      setIsHeroVisible(true); // Display Hero as soon as loading ends
+    }, 2000);
+
+    const logoTimer = setTimeout(() => {
+      setIsLogoVisible(true); // Show logo with fade-in effect
+    }, 500); // Logo fade-in starts after 0.5 seconds
 
     if (isHeroVisible) {
       const imageTimer = setTimeout(() => {
-        setIsImageVisible(true); // Hero表示後に背景画像をフェードイン
-      }, 100); // わずかに遅らせてフェードイン開始
+        setIsImageVisible(true); // Fade in background image shortly after Hero becomes visible
+      }, 100); // Slight delay before the fade-in starts
 
       return () => clearTimeout(imageTimer);
     }
 
-    return () => clearTimeout(loadingTimer);
+    return () => {
+      clearTimeout(loadingTimer);
+      clearTimeout(logoTimer);
+    };
   }, [isHeroVisible]);
 
   return (
@@ -135,14 +144,14 @@ const Hero: React.FC = () => {
 
       {/* Loading Screen */}
       <div
-        className={`fixed inset-0 flex items-center justify-center z-50 bg-blue-300 transition-transform duration-[2000ms] ease-in-out transform ${
+        className={`fixed inset-0 flex items-center justify-center z-50 bg-slate-900 transition-transform duration-[1000ms] ease-in-out transform ${
           !isLoading ? "translate-y-[-100%]" : "translate-y-0"
         }`}
       >
         {/* Fade-in for Logo */}
         <div
-          className={`transition-opacity duration-[2500ms] ease-in-out ${
-            isLoading ? "opacity-100" : "opacity-0"
+          className={`transition-opacity duration-[1500ms] ease-in-out ${
+            isLogoVisible ? "opacity-100" : "opacity-0"
           }`}
         >
           <Logo />
