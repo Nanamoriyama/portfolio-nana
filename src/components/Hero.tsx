@@ -43,13 +43,13 @@ const Hero = () => {
 
       {/* メインコンテンツ (デスクトップ・モバイル共通) */}
       <div className="relative p-4 bg-opacity-70 z-20">
-        <div className="py-16 font-light font-serif bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-slate-50 via-pink-500 to-slate-50 bg-size-200%">
+        <div className="py-10 font-light font-serif bg-clip-text text-transparent animate-gradient bg-gradient-to-r from-slate-50 via-pink-500 to-slate-50 bg-size-200%">
           <div className="align-element grid md:grid-cols-2 items-start justify-start gap-8">
             <article className="md:ml-8 md:mt-2">
-              <h1 className="text-3xl font-extralight tracking-wider">
+              <h1 className="text-2xl font-extralight tracking-wider">
                 Nana Moriyama
               </h1>
-              <div className="mt-4 text-sm capitalize tracking-wide">
+              <div className="mt-2 text-sm capitalize tracking-wide">
                 <div className="pl-3 text-base">Front-End Developer</div>
               </div>
 
