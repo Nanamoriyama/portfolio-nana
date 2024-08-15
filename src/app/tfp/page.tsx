@@ -1,9 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import ProductSlider from "@/components/ProductSlider"; // ProductSliderをインポート
 import Footer from "@/components/Footer";
-import { FaGithubSquare } from "react-icons/fa";
 
 const Page = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -16,184 +15,90 @@ const Page = () => {
     setSelectedImage(null);
   };
 
+  // 画像のリスト
+  const images = [
+    "/images/tfc111.png",
+    "/images/tfc112.png",
+    "/images/tfc113.png",
+    "/images/tfc114.png",
+  ];
+
   return (
     <>
       <div className="m-4 pt-8 md:pl-8"></div>
-
-      <div className="m-4 flex justify-between">
-        <div>
-          <h4 className="font-raleway font-light text-3xl m-4 md:text-4xl">
-            Travel Foot Print Calculator
-          </h4>
-          <p className="font-raleway m-4 p-2 mr-2 text-sm md:ml-6 md:mb-0 md:text-base">
-            TechLab Group Project
-            <br />
-            Together with Data Science team and UX/UI team.
-          </p>
-          <br />
-          <div className="flex items-center ml-4 md:ml-8">
-            <div className="">
-              <Image src="/images/link.png" width={40} height={0} alt="" />
-            </div>
-            <a
-              href="https://tfc.nanamoriyama.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-base font-bold md:text-base"
-            >
-              https://tfc.nanamoriyama.com/
-            </a>
-
-            <a
-              href="https://github.com/Nanamoriyama/travel-footprint-calculator"
-              className="github-icon hover:duration-300"
-            >
-              <Image
-                src="/images/githubicon.png"
-                height={60}
-                width={60}
-                alt=""
-              />
-            </a>
-          </div>
-          <div className="m-6 p-4 md:p-14">
-            We receive the award🏆
-            <div>
+      <div className="max-w-screen-md mx-auto">
+        {" "}
+        {/* Added max width and centered content */}
+        <h4 className="flex justify-center font-raleway mb-4 pb-4 font-bold text-2xl m-4 md:text-3xl">
+          Travel Foot Print Calculator
+        </h4>
+        {/* 上部セクション */}
+        <div className="md:pt-10 m-4 md:flex md:flex-col md:items-center">
+          {/* 左側の見出しと説明 */}
+          <div className="flex flex-col justify-center items-center mb-8 md:mb-0">
+            <div className="flex flex-col items-left ml-4 md:ml-8">
+              <span className="text-xs">Web page</span>
               <a
-                href="https://medium.com/@techlabs.rotterdam/travel-footprint-calculator-making-your-travels-more-sustainable-d1f9bc52a7fe"
+                href="https://tfc.nanamoriyama.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-bold md:text-base"
+                className="github-icon font-bold text-xs mb-4 md:text-base"
               >
-                Click Here
+                https://tfc.nanamoriyama.com/
               </a>
-              <span className="p-2">to check the project summary.</span>
+              <div className="flex flex-col mb-3 github-icon">
+                <span className="text-xs">Project summary</span>
+                <a
+                  href="https://medium.com/@techlabs.rotterdam/travel-footprint-calculator-making-your-travels-more-sustainable-d1f9bc52a7fe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="github-icon text-xs font-bold mb-4 md:text-base"
+                >
+                  https://medium.com/@techlabs...
+                </a>
+              </div>
+              <div className="flex items-left items-center">
+                <span className="text-xs">GitHub Repository</span>
+                <a
+                  href="https://github.com/Nanamoriyama/travel-footprint-calculator"
+                  className="github-icon items-center"
+                >
+                  <Image
+                    src="/images/githubicon.png"
+                    height={45}
+                    width={45}
+                    alt="GitHub icon"
+                    className="flex items-center"
+                  />
+                </a>
+              </div>
             </div>
-            <br /> With this app, you can see the difference in emissions
-            between plane, car and train after that, you can choose the offset
-            options whenever you make plans to travel. <br />
-            <br />
-            Introduction What are the ideas behind your project? For which
-            problem should a solution be found? A lot of people like to travel,
-            but a lot of people also want to live more sustainably and it can be
-            difficult to combine those two. Especially flying has a reputation
-            for being bad for the environment. We all know this, but we still
-            actually travel quite a lot. <br />
-            <br />
-            Our initial idea was to show people the emissions they are causing
-            with different modes of transport so they can compare them and
-            choose the most sustainable option. We wanted to show them the
-            difference in emissions between plane, car and train. But, it turned
-            out that even though people who know how much CO2 emissions it
-            causes to, for example, fly from Amsterdam to Barcelona (i.e. 857 kg
-            CO2, as opposed to 177 kg by train and 589 kg by car), about 50% of
-            them actually still choose to fly. <br />
-            Making people aware of the amount of emissions does not seem enough,
-            it’s too abstract. What does 857 kg even mean? So we decided to also
-            include ways of compensating for the emissions by doing (or not
-            doing) activities in your daily life, like eating less meat or
-            buying secondhand clothing.
-            <br /> That way you can show people the impact of their travels and
-            make it less abstract, plus you offer people a way to travel more
-            sustainably by giving them offset options. This way, you know that
-            857 kg of CO2 emissions actually means you’ll have to cycle for 5714
-            km (instead of driving your car) or do not eat 32 kg of beef.
-            <br />
-            <br /> This might lead you to make a different choice for your mode
-            of transport for your travels, or at least it gives you ideas about
-            how to compensate for your emissions. All of this would be
-            incorporated into an application you can use to calculate your
-            emissions and offset options whenever you make plans to travel.
-            <br />
-            <br />
-            In our project, I added a feature to find routes in both directions.
-            For example, if the user searches for a trip from London to
-            Amsterdam, but the data only has Amsterdam to London, our code will
-            still find and show the correct route information. I did this by
-            checking for both possible directions in the data, ensuring users
-            get results even if they search for a reverse route.
           </div>
 
-          <ul className="ml-6 p-6">
-            <li>Date: June 2024</li>
-            <li>Category: Front-end</li>
-          </ul>
+          {/* 右側のSwiperスライダーをデスクトップでは下に配置 */}
+          <div className="md:w-full md:mt-8 mt-4 md:p-16">
+            <ProductSlider
+              images={images}
+              title="Travel Foot Print Calculator"
+            />
+          </div>
         </div>
-      </div>
-
-      <div className="flex flex-wrap justify-evenly">
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/tfc7.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/tfc7.png"
-            alt="Screenshot 1"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/tfc5.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/tfc5.png"
-            alt="Screenshot 2"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/tfc6.png")}
-        >
-          <p>We discussed ideas on Miro Board</p>
-          <Image
-            className="object-cover"
-            src="/images/tfc6.png"
-            alt="Screenshot 3"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/tfc8.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/tfc8.png"
-            alt="Screenshot 4"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/tfc9.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/tfc9.png"
-            alt="Screenshot 4"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/tfc10.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/tfc10.png"
-            alt="Screenshot 4"
-            width={400}
-            height={200}
-          />
+        {/* 下部の写真セクション */}
+        <div className="flex flex-wrap justify-evenly mt-8">
+          <div
+            className="bg-white border p-6 m-2 cursor-pointer"
+            onClick={() => openModal("/images/tfc6.png")}
+          >
+            <p>We discussed ideas on Miro Board</p>
+            <Image
+              className="object-cover"
+              src="/images/tfc6.png"
+              alt="Screenshot 3"
+              width={400}
+              height={200}
+              layout="responsive"
+            />
+          </div>
         </div>
       </div>
 
@@ -209,6 +114,7 @@ const Page = () => {
               alt="Selected Image"
               width={800}
               height={600}
+              layout="responsive"
               className="object-cover"
             />
             <button
