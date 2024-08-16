@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import SwiperCore from "swiper"; // Swiperの型をインポート
 
 type ProductSliderProps = {
   images: string[];
@@ -12,9 +13,18 @@ type ProductSliderProps = {
 };
 
 const ProductSlider: React.FC<ProductSliderProps> = ({ images, title }) => {
+  const swiperRef = useRef<SwiperCore | null>(null); // Swiperのインスタンスの型を指定
+
+  const handleSlideClick = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext(); // 型が正しく認識されるようになります
+    }
+  };
+
   return (
     <div className="mt-4 mx-auto max-w-full relative">
       <Swiper
+        onSwiper={(swiper) => (swiperRef.current = swiper)} // Swiperインスタンスを参照にセット
         spaceBetween={30}
         slidesPerView={1}
         centeredSlides={true}
@@ -27,7 +37,11 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ images, title }) => {
         className="relative"
       >
         {images.map((image, index) => (
-          <SwiperSlide key={index} className="flex justify-center items-center">
+          <SwiperSlide
+            key={index}
+            className="flex justify-center items-center cursor-pointer"
+            onClick={handleSlideClick}
+          >
             <div className="overflow-hidden rounded-lg shadow-md">
               <Image
                 src={image}
@@ -46,7 +60,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ images, title }) => {
         <div className="swiper-button-prev-custom absolute top-1/2 left-[-50px] transform -translate-y-1/2 text-black bg-black bg-opacity-50 p-3 rounded-full cursor-pointer z-10">
           &#10094;
         </div>
-        <div className="swiper-button-next-custom absolute top-1/2 right-[-50px] transform -translate-y-1/2 textblack bg-black bg-opacity-50 p-3 rounded-full cursor-pointer z-10">
+        <div className="swiper-button-next-custom absolute top-1/2 right-[-50px] transform -translate-y-1/2 text-black bg-black bg-opacity-50 p-3 rounded-full cursor-pointer z-10">
           &#10095;
         </div>
       </Swiper>
