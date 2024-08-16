@@ -9,9 +9,9 @@ const About = () => {
         className="overflow-hidden relative bg-cover bg-center"
         style={{ backgroundImage: "url('/images/bg3.png')" }}
       >
-        <div className="text-5xl md:text-6xl font-semibold font-serif animate-slide-in-left text-center mt-24">
+        <div className="text-5xl md:text-6xl font-semibold font-serif animate-slide-in-left text-center mt-10">
           A Little Bit <br />
-          <span className="text-blue-300 pl-10"> About Me</span>
+          <span className="text-blue-900 pl-10"> About Me</span>
         </div>
 
         <div className="h-screen flex flex-col justify-center items-center md:flex-row md:justify-between">
@@ -19,8 +19,8 @@ const About = () => {
             <Image
               src="/images/nanap1.png"
               className="object-cover mb-4 mr-6 mt-6"
-              width={300}
-              height={300}
+              width={280}
+              height={280}
               alt="Profile picture of Nana Moriyama"
               quality={100}
             />
@@ -87,7 +87,15 @@ const About = () => {
                 height={300}
                 alt="Profile picture of Nana Moriyama"
               />
-              <div className="text-right text-3xl font-base leading-relaxed text-gray-800 animate-slide-in-up">
+              <div className="hidden text-right text-3xl font-base leading-relaxed text-stone-800 animate-slide-in-up">
+                <span className="block pr-10">
+                  こ<br />ん<br />に<br />ち<br />は
+                </span>
+                <span className="block mt-6 pr-24">
+                  森<br />山<br />で<br />す
+                </span>
+              </div>
+              <div className="text-right text-3xl font-base leading-relaxed text-stone-800 animate-slide-in-up">
                 <span className="block pr-10">
                   こ<br />ん<br />に<br />ち<br />は
                 </span>

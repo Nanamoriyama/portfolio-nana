@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
+import ProjectComponent from "@/components/ProjectComponent";
+import Breadcrumb from "@/components/Breadcrumb"; // 新しいBreadcrumbコンポーネントをインポート
 import Image from "next/image";
-import Link from "next/link";
+import ProductSlider from "@/components/ProductSlider";
 import Footer from "@/components/Footer";
 
 const Page = () => {
@@ -15,9 +17,17 @@ const Page = () => {
     setSelectedImage(null);
   };
 
+  // 画像のリスト
+  const images = [
+    "/images/ibt111.png",
+    "/images/ibt112.png",
+    "/images/ibt113.png",
+    "/images/ibt114.png",
+  ];
+
   return (
     <>
-      <div className="m-4 pt-8 md:pl-8">
+      <div className="flex justify-center m-10 p-2">
         <Image
           className="object-cover"
           src="/images/wiflogo.jpg"
@@ -27,106 +37,76 @@ const Page = () => {
         />
       </div>
 
-      <div className="m-4 flex justify-between">
-        <div>
-          <h4 className="font-light text-3xl m-4 md:text-4xl">
-            Recruitment platform
-          </h4>
-          <div className="flex items-center">
-            <div className="">
-              <Image src="/images/link.png" width={40} height={0} alt="" />
-            </div>
-            <a
-              href="https://world-in-freelance.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-bold md:text-base"
-            >
-              https://world-in-freelance.vercel.app/
-            </a>
-          </div>
-          <p className="m-6 p-4 md:p-14">
-            Summary:
-            <br />
-            I refactored the original codebase, separating it into more
-            understandable and maintainable components. I updated the project to
-            the latest version of Next.js and deployed it on Vercel.
-            Additionally, I enhanced the CSS to improve the visual appeal and
-            user experience for Form, Navigation bar and Footer.
-            <br />
-            <br />
-            Form Handling and Automation:
-            <br />
-            The project includes a custom form managed using Next.js's API
-            Routes. Upon submission, the form data is processed and sent to n8n,
-            an automation tool, which then automatically populates a Google
-            Sheet. This setup ensures efficient data collection and easy access
-            to the submitted information.
-            <br />
-            <br />
-            Technical Challenges & Learnings:
-            <br />I faced challenges in adapting the project to the latest
-            Next.js version, which involved learning new features and best
-            practices. Additionally, managing state across components and
-            optimizing the deployment process were key learning experiences. The
-            planned migration to AWS will further develop my skills in cloud
-            infrastructure management.
-          </p>
-          <ul className="ml-6 p-6">
-            <li>Date: June 2024</li>
-            <li>Category: Front-end</li>
-          </ul>
-        </div>
+      {/* ラインを追加 */}
+      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
+      <div className="md:ml-8">
+        {/* Breadcrumbを追加 */}
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Projects", href: "/projects" },
+            { label: "Current Project" }, // 現在のページを示す
+          ]}
+        />
       </div>
+      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
+      <div className="max-w-screen-lg mx-auto md:flex md:space-x-8">
+        {/* 左側のメインコンテンツ */}
+        <div className="md:w-2/3">
+          {/* 上部セクション */}
+          <div className="mt-14 md:pt-10 m-4 md:flex md:flex-col md:items-start md:ml-8">
+            <div className="flex flex-col justify-center items-start mb-8 md:mb-0">
+              <div className="flex flex-col items-start ml-4 md:ml-12">
+                <span className="text-xs">Web page</span>
+                <a
+                  href="https://worldinfreelance.ib-tec.co.jp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="github-icon font-bold text-xs mb-4 md:text-base"
+                >
+                  https://worldinfreelance.ib-tec.co.jp/
+                </a>
+                <span className="text-xs">Company</span>
+                <a
+                  href="https://worldinfreelance.ib-tec.co.jp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="github-icon font-bold text-xs mb-4 md:text-base"
+                >
+                  Inbound Technology
+                </a>
+              </div>
+            </div>
 
-      <div className="flex flex-wrap justify-evenly">
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/wif1.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/wif1.png"
-            alt="Screenshot 1"
-            width={400}
-            height={200}
-          />
+            {/* スライダー */}
+
+            <div className="md:w-full md:p-14">
+              <div className="font-raleway font-bold flex justify-center">
+                Summary
+              </div>
+              <ProductSlider
+                images={images}
+                title="Travel Foot Print Calculator"
+              />
+            </div>
+          </div>
+
+          <div className="flex justify-center items-center p-6 m-4 md:w-full md:max-w-xl mx-auto">
+            Through this project, I gained valuable experience in developing and
+            maintaining front-end components using React to build dynamic and
+            responsive user interfaces. I learned how to effectively use pnpm
+            and discovered its convenience in streamlining our workflow.
+            Additionally, I explored automation techniques with n8n and
+            integrated data seamlessly with Google Sheets. Working efficiently
+            as a team.
+            <br /> These experiences, along with many other insights, have
+            greatly expanded my knowledge and skills.
+          </div>
         </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/wif2.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/wif2.png"
-            alt="Screenshot 2"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/wif3.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/wif3.png"
-            alt="Screenshot 3"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/wif4.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/wif4.png"
-            alt="Screenshot 4"
-            width={400}
-            height={200}
-          />
+
+        {/* 右側のプロジェクトコンテンツ (モバイルでは非表示) */}
+        <div className="hidden  p-8 md:flex md:w-1/3 flex-col space-y-4 mt-8 md:mt-16 sticky top-20">
+          <ProjectComponent />
         </div>
       </div>
 
