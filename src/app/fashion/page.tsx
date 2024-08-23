@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import { FaGithubSquare } from "react-icons/fa";
+import ProjectComponent from "@/components/ProjectComponent";
 
 const Page = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -136,7 +137,9 @@ const Page = () => {
           />
         </div>
       </div>
-
+      <div className="mt-10">
+        <ProjectComponent />
+      </div>
       {/* モーダル */}
       {selectedImage && (
         <div

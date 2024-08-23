@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import { FaGithubSquare } from "react-icons/fa";
+import ProjectComponent from "@/components/ProjectComponent";
 
 const Page = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -37,7 +38,7 @@ const Page = () => {
           <br />
           <div className="flex items-center ml-8 md:m-8">
             <div className="">
-              <Image src="/images/link.png" width={40} height={0} alt="" />
+              <Image src="/images/link.png" width={30} height={0} alt="" />
             </div>
             <a
               href="https://phone-case-tau.vercel.app/"
@@ -128,6 +129,9 @@ const Page = () => {
             height={200}
           />
         </div>
+      </div>
+      <div className="mt-10">
+        <ProjectComponent />
       </div>
 
       {/* モーダル */}
