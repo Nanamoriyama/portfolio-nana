@@ -52,11 +52,17 @@ const Projects = () => {
         minHeight: "100vh",
         overflowY: "hidden",
       }}
-      className="custom-projects-bg overscroll-none"
+      className="custom-projects-bg"
     >
-      <div className="flex justify-center pt-20 font-light text-5xl text-white">
-        <TextTyping text="PROJECTS" />
+      {/* Link for "Home" */}
+      <div className="text-stone-200 absolute top-0 right-0 p-5 flex flex-col items-end gap-2">
+        <Link href="/">Home</Link>
+        <Link href="/about">About</Link>
       </div>
+
+      {/*<div className="flex justify-center mt-3 md:pt-20 font-light text-5xl text-white">
+        <TextTyping text="PROJECTS" />
+    </div>*/}
 
       {/* New container for text and projects */}
       <div className="text-and-projects">
@@ -70,18 +76,21 @@ const Projects = () => {
             overscrollBehavior: "contain",
           }}
         >
-          <div className="whitespace-nowrap flex flex-col justify-center items-center md:gap-5 px-5">
-            <span className=" text-stone-100 font-bold text-4xl md:text-9xl">
-              C O D E is F u n
+          <div className="whitespace-nowrap flex flex-col justify-center items-center mt-28 md:gap-5 px-5">
+            <span className=" text-stone-100 font-bold text-xl md:text-7xl">
+              F R O N T E N D - D E V E L O P E R
             </span>
             <br />
             <div className="px-2.5 py-1.5 inline-block">
               <Image
-                src="/images/nanam.png"
+                src="/images/nanamoriyama.png"
                 alt="nanam"
-                width={700}
-                height={500}
-                objectFit="contain"
+                width={800}
+                height={700}
+                priority
+                style={{
+                  objectFit: "contain",
+                }}
               />
             </div>
           </div>
@@ -91,7 +100,7 @@ const Projects = () => {
               img: "/images/tfc99.png",
               alt: "Tfc",
               title: "Travel Footprint Calculator",
-              className: styles.project1, // 1st project
+              className: styles.project1,
               tool: "React/TechLab Rotterdam",
             },
             {
@@ -99,7 +108,7 @@ const Projects = () => {
               img: "/images/projects2.png",
               alt: "Wif",
               title: "World in Freelance",
-              className: styles.project2, // 2nd project
+              className: styles.project2,
               tool: "React/NEXT.js",
             },
             {
@@ -107,7 +116,7 @@ const Projects = () => {
               img: "/images/projects3.png",
               alt: "Fashion",
               title: "Fashion Website",
-              className: styles.project3, // 3rd project
+              className: styles.project3,
               tool: "React/NEXT.js",
             },
             {
@@ -115,7 +124,7 @@ const Projects = () => {
               img: "/images/projects4.png",
               alt: "Phonecase",
               title: "Phonecase",
-              className: styles.project4, // 4th project
+              className: styles.project4,
               tool: "React/NEXT.js",
             },
             {
@@ -123,7 +132,7 @@ const Projects = () => {
               img: "/images/projects5.png",
               alt: "Mimi33",
               title: "Private Bartender",
-              className: styles.project5, // 5th project
+              className: styles.project5,
               tool: "React",
             },
             {
@@ -142,7 +151,6 @@ const Projects = () => {
               className: styles.project7,
               tool: "React/Next.js",
             },
-            // Add more projects as needed
           ].map((project, index) => (
             <div
               key={index}
@@ -154,15 +162,16 @@ const Projects = () => {
                     src={project.img}
                     alt={project.alt}
                     fill
-                    className={`${styles.image} object-contain`}
+                    className={`${styles.image}`}
+                    priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    style={{
+                      objectFit: "cover",
+                    }}
                   />
                 </div>
-                <h4 className={`${styles.projectTitle} text-white`}>
-                  {project.title}
-                </h4>
-                <h4 className={`${styles.projectTool} text-gray-400`}>
-                  {project.tool}
-                </h4>
+                <h4 className={`${styles.projectTitle}`}>{project.title}</h4>
+                <h4 className={`${styles.projectTool}`}>{project.tool}</h4>
                 <div className={styles.overlay}></div>
               </Link>
             </div>

@@ -39,7 +39,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="flex-grow w-full md:w-1/2 overflow-y-auto p-6 md:p-10 md:mt-5">
+          <div className="flex-grow w-full md:w-1/2 overflow-y-auto p-6 md:p-10">
             <div className="align-element">
               <article className="text-left leading-relaxed text-lg md:text-xl text-gray-800">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4">Hi!</h2>

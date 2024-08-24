@@ -1,19 +1,13 @@
-.text-and-projects {
-  display: flex;
-  align-items: center; /* テキストと写真の上端を揃える */
-  margin-top: 200px;
-  gap: 20px; /* テキストと写真の間にスペースを追加 */
-}
-
 /* Adjust project container positioning */
 .projectContainer {
   position: relative;
   overflow: visible;
   width: 350px;
   height: 350px;
-  margin-bottom: 180px;
+  margin-bottom: 200px;
   z-index: 1;
   transition: transform 0.3s ease-in-out;
+  top: 80px;
 }
 
 /* Individual project positions */
