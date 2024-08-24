@@ -1,104 +1,58 @@
 "use client";
+import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import Link from "next/link";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import Timeline from "@/components/Timeline";
 
 const About = () => {
+  useEffect(() => {
+    document.body.style.overflowY = "auto";
+    return () => {
+      document.body.style.overflowY = "hidden";
+    };
+  }, []);
+
   return (
     <>
       <div
-        className="overflow-hidden relative bg-cover bg-center"
+        className="relative overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: "url('/images/bg3.png')" }}
       >
-        <div className="text-4xl md:text-6xl font-semibold font-serif animate-slide-in-left text-center mt-10">
-          A Little Bit <br />
-          <span className="text-blue-900 pl-10"> About Me</span>
+        <div className="text-stone-900 fixed top-0 right-0 p-3 flex items-center gap-2 transition-colors duration-300 hover:text-blue-800">
+          <Link href="/" className="text-lg">
+            Projects
+          </Link>
+          <MdKeyboardArrowRight className="text-2xl" />
         </div>
 
-        <div className="h-screen flex flex-col justify-center items-center md:flex-row md:justify-between">
-          <div className="block md:hidden animate-slide-in-left">
+        {/* nanapの写真とオーバーレイ */}
+        <div className="relative flex flex-col justify-center items-center mt-10">
+          <div className="relative mb-8 w-full md:size-3/5">
             <Image
               src="/images/nanap1.png"
-              className="object-cover mb-2 mr-6 mt-6"
-              width={280}
-              height={280}
+              className="object-cover"
+              width={800}
+              height={700}
               alt="Profile picture of Nana Moriyama"
               quality={100}
+              style={{ width: "100%", height: "auto" }}
             />
-          </div>
+            <div className="absolute inset-0 bg-black opacity-20"></div>
 
-          <div className="hidden md:flex md:w-1/4 flex-col justify-center items-center space-y-4">
-            <div className="flex flex-col items-center space-y-4">
-              <Image
-                src="/images/nanap1.png"
-                className="object-cover ml-2"
-                width={300}
-                height={300}
-                alt="Profile picture of Nana Moriyama"
-                quality={100}
-              />
-            </div>
-          </div>
-
-          <div className="flex-grow w-full md:w-1/2 overflow-y-auto p-6 md:p-10">
-            <div className="align-element">
-              <article className="text-left leading-relaxed text-lg md:text-xl text-gray-800">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">Hi!</h2>
-                <p>
-                  I'm originally from Osaka, Japan, but I've been calling the
-                  Netherlands my home for the last 8 years. In this time, I
-                  founded my own Japanese language school, helped launch two
-                  Japanese restaurants in Utrecht, and managed them with the
-                  owners.
-                </p>
-                <br />
-                <p>
-                  I've always been curious how I can make websites for my
-                  Japanese school, which led me to dive into web development. I
-                  started my tech journey with the Udemy Web Developer Bootcamp
-                  in 2023, where I learned HTML, CSS, JavaScript, node.js, Json,
-                  axios, and express.js. That’s where I fell in love with making
-                  things that people can actually interact with online. I've
-                  also explored React, TypeScript, Next.js, AWS, MongoDB, Auth0,
-                  Firebase, and Redux to round out my skills.
-                </p>
-                <br />
-                <p>
-                  I believe that UX is key to gaining a competitive advantage
-                  and realize this requires incorporating cutting-edge
-                  technologies. I am continuously learning the field. In
-                  addition, to improve my problem-solving skills, I do LeetCode
-                  daily.
-                </p>
-                <br />
-                <p className="mb-4">
-                  I love putting all these tools to use to bring awesome ideas
-                  to life. Let’s make something great together!
-                </p>
-              </article>
-            </div>
-          </div>
-
-          <div className="hidden md:flex md:w-1/4 flex-col justify-center items-center space-y-4">
-            <div className="flex flex-col items-center space-y-4">
-              <Image
-                src="/images/cat3.png"
-                className="object-cover"
-                width={300}
-                height={300}
-                alt="Profile picture of Nana Moriyama"
-              />
-
-              <div className="text-right text-2xl font-base leading-relaxed text-stone-800 animate-slide-in-up">
-                <span className="block pr-10">
-                  こ<br />ん<br />に<br />ち<br />は
-                </span>
-                <span className="block mt-6 pr-24">
-                  森<br />山<br />で<br />す
-                </span>
+            {/* 画像の上を流れるテキスト */}
+            <div className="absolute top-0 left-0 w-full h-full flex items-center overflow-hidden">
+              <div className="marquee-text text-white text-4xl md:text-7xl font-semibold font-serif whitespace-nowrap">
+                A Little Bit
+                <span className="pl-10 text-blue-300"> About Me</span>
               </div>
             </div>
           </div>
         </div>
+
+        {/* タイムラインセクション */}
+        <Timeline />
       </div>
       <Footer />
     </>

@@ -1,15 +1,18 @@
-/* Adjust project container positioning */
 .projectContainer {
   position: relative;
   overflow: visible;
   width: 350px;
-  height: 350px;
+  height: 100%;
+
   margin-bottom: 200px;
   z-index: 1;
   transition: transform 0.3s ease-in-out;
   top: 80px;
 }
-
+.projectContainer:hover {
+  transform: scale(1.05); /* スケールのみ変更、位置はそのまま */
+  transition: transform 0.3s ease-in-out;
+}
 /* Individual project positions */
 .project1 {
   margin-top: 200px;
@@ -66,7 +69,7 @@
   top: 0;
   left: 0;
   transform: translateY(0);
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* 時間を0.5秒に設定 */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .projectContainer:hover {
@@ -174,14 +177,19 @@
 }
 @media (max-width: 767px) {
   .projectContainer {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     margin-bottom: 80px;
+  }
+  .textAndProjects {
+    width: 90vw; /* 幅を90%に設定、適宜調整可能 */
+    margin: 0 auto; /* 中央揃え */
+    height: 80vh;
   }
 
   .link {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
   }
 
   .projectTitle {
@@ -197,6 +205,35 @@
     /* モバイル向けに位置を変更 */
     left: 10px;
     bottom: 50px;
+  }
+
+  .imageWrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  .image {
+    object-fit: cover;
+  }
+
+  .projectTitle,
+  .projectTool {
+    font-size: 0.8rem; /* 文字サイズを小さく調整 */
+    padding: 10px; /* パディングを調整 */
+  }
+  .imageWrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  .image {
+    object-fit: cover;
+  }
+
+  .projectTitle,
+  .projectTool {
+    font-size: 0.8rem; /* 文字サイズを小さく調整 */
+    padding: 10px; /* パディングを調整 */
   }
 
   /* 個別プロジェクトの位置を変更 */
@@ -296,16 +333,13 @@
 }
 
 .horizontalScroll {
-  display: flex;
-  flex-direction: row;
+  height: 100vh; /* ビューポートの高さに固定 */
   overflow-x: scroll;
+  overflow-y: hidden; /* 縦スクロールを無効に */
+  display: flex;
   scroll-snap-type: x mandatory;
   white-space: nowrap;
-  padding-bottom: 150px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
-
 .horizontalScroll::-webkit-scrollbar {
   display: none;
 }
@@ -327,15 +361,14 @@
   border-radius: 10px;
   transition: width 0.1s ease-out;
 }
-
-.custom-projects-bg {
-  background-color: black;
-  min-height: 100vh;
-  overflow-y: hidden;
+.overflow-y-hidden-important {
+  overflow-y: hidden !important;
 }
-
-.custom-projects-bg .horizontalScroll {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
+.root-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; /* 全体のスクロールを無効に */
 }

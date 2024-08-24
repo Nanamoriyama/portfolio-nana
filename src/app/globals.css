@@ -12,6 +12,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif; /* 例としてフォントを設定 */
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 html {
   overscroll-behavior: none;
@@ -120,4 +122,27 @@ html {
     width: 100%;
     height: auto;
   }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* マーキーテキストのアニメーション */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-text {
+  display: inline-block;
+  animation: marquee 40s linear infinite;
 }
