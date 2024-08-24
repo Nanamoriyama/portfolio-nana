@@ -20,7 +20,7 @@ const About = () => {
         className="relative overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: "url('/images/bg3.png')" }}
       >
-        <div className="text-stone-900 fixed top-0 right-0 p-3 flex items-center gap-2 transition-colors duration-300 hover:text-blue-800">
+        <div className="text-stone-900 fixed top-0 right-0 pt-3 flex items-center transition-colors duration-300 hover:text-blue-800">
           <Link href="/" className="text-lg">
             Projects
           </Link>
@@ -28,7 +28,7 @@ const About = () => {
         </div>
 
         {/* nanapの写真とオーバーレイ */}
-        <div className="relative flex flex-col justify-center items-center mt-10">
+        <div className="relative flex flex-col justify-center items-center mt-10 mb-4">
           <div className="relative mb-8 w-full md:size-3/5">
             <Image
               src="/images/nanap1.png"

@@ -29,6 +29,7 @@ const Timeline = () => {
             src="/ichi.mp4"
             controls
             className="w-full  mr-4 pr-8 md:w-1/3 mt-4 md:mt-0 md:ml-4"
+            muted
           />
         </div>
       </div>
