@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProjectComponent from "@/components/ProjectComponent";
 import Breadcrumb from "@/components/Breadcrumb"; // 新しいBreadcrumbコンポーネントをインポート
 import Image from "next/image";
@@ -7,6 +7,17 @@ import ProductSlider from "@/components/ProductSlider";
 import Footer from "@/components/Footer";
 
 const Page = () => {
+  useEffect(() => {
+    // ページがマウントされたときにスクロールを有効化
+    document.body.style.overflowY = "auto";
+    document.body.style.overflowX = "auto";
+
+    return () => {
+      // ページがアンマウントされたときにグローバル設定に戻す
+      document.body.style.overflowY = "hidden";
+      document.body.style.overflowX = "hidden";
+    };
+  }, []);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const openModal = (imageSrc: string) => {

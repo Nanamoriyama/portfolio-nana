@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
@@ -7,6 +7,17 @@ import { FaGithubSquare } from "react-icons/fa";
 import ProjectComponent from "@/components/ProjectComponent";
 
 const Page = () => {
+  useEffect(() => {
+    // ページがマウントされたときにスクロールを有効化
+    document.body.style.overflowY = "auto";
+    document.body.style.overflowX = "auto";
+
+    return () => {
+      // ページがアンマウントされたときにグローバル設定に戻す
+      document.body.style.overflowY = "hidden";
+      document.body.style.overflowX = "hidden";
+    };
+  }, []);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const openModal = (imageSrc: string) => {
