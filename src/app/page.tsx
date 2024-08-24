@@ -2,7 +2,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./Projects.module.css";
+import styles from "./projects.module.css";
 
 const Projects = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
