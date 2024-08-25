@@ -44,8 +44,8 @@ const About = () => {
             {/* 画像の上を流れるテキスト */}
             <div className="absolute top-0 left-0 w-full h-full flex items-center overflow-hidden">
               <div className="marquee-text text-white text-4xl md:text-7xl font-semibold font-serif whitespace-nowrap">
-                A Little Bit
-                <span className="text-blue-300"> About Me</span>
+                Nana
+                <span className="text-blue-300"> Moriyama</span>
               </div>
             </div>
           </div>
