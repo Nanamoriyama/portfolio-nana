@@ -1,10 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+
 import Footer from "@/components/Footer";
-import { FaGithubSquare } from "react-icons/fa";
+
 import ProjectComponent from "@/components/ProjectComponent";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const Page = () => {
   useEffect(() => {
@@ -30,27 +31,30 @@ const Page = () => {
 
   return (
     <>
-      <div className="ml-12 pt-8 md:pl-8">
+      <div className="flex justify-center items-center w-full mt-8">
         <Image
-          className="object-cover"
           src="/images/moriyamalogo.png"
           alt="Moriyama Logo"
           width={100}
           height={100}
         />
+        <div className="font-light text-sm md:text-2xl mt-4 text-center">
+          Japanese Language School Moriyama
+        </div>
       </div>
 
-      <div className="m-4 flex justify-between">
-        <div>
-          <h4 className="font-light text-3xl ml-8 mt-4 md:text-4xl">
-            Japanese Language School Moriyama
-          </h4>
-
-          <br />
-          <div className="flex items-center ml-8 md:m-8">
-            <div className="">
-              <Image src="/images/link.png" width={40} height={0} alt="" />
-            </div>
+      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
+      <div className="md:ml-8">
+        <Breadcrumb
+          items={[{ label: "Home", href: "/" }, { label: "Current Project" }]}
+        />
+      </div>
+      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
+      <br />
+      <div className="flex justify-center">
+        <div className="flex flex-col items-start ml-4 md:ml-12 mb-8">
+          <span className="text-xs">Web page</span>
+          <div className="flex items-center">
             <a
               href="https://moriyama.vercel.app/"
               target="_blank"
@@ -59,31 +63,41 @@ const Page = () => {
             >
               https://moriyama.vercel.app/
             </a>
-
             <a
               href="https://github.com/Nanamoriyama/JapaneseSchool"
-              className="github-icon hover:duration-300"
+              className="github-icon hover:duration-300 ml-2"
             >
               <Image
                 src="/images/githubicon.png"
                 height={60}
                 width={60}
-                alt=""
+                alt="GitHub Icon"
               />
             </a>
           </div>
-          <p className="m-6 p-4 md:p-14">
-            Next.js and Typescript Project.
-            <br />I made a website for my own Japanese language school. Later I
-            am planning to add more pages for Blog, language & culture Quiz and
-            word dictionary by different levels.
-          </p>
-          <ul className="ml-6 p-6">
-            <li>Date: May 2024</li>
-            <li>Category: Front-end(little Backend)</li>
-          </ul>
         </div>
       </div>
+
+      <p className="m-6 p-4 md:p-14">
+        Next.js and Typescript Project.
+        <br />I made a website for my own Japanese language school.
+        <br />
+        The logo transition is implemented using CSS for smooth animations,
+        deliberately avoiding the use of JavaScript-heavy methods.
+        <br /> <br />
+        I designed and implemented a dynamic loading screen using React and CSS
+        transitions. This component plays a crucial role in improving the user
+        experience by providing visual feedback during loading times,
+        particularly when transitioning between different states.
+        <br />
+        <br />
+        Later I am planning to add more pages for Blog, language & culture Quiz
+        and word dictionary by different levels.
+      </p>
+      <ul className="ml-6 p-6">
+        <li>Date: May 2024</li>
+        <li>Category: Front-end(little Backend)</li>
+      </ul>
 
       <div className="flex flex-wrap justify-evenly">
         <div

@@ -1,10 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+
 import Footer from "@/components/Footer";
-import { FaGithubSquare } from "react-icons/fa";
+
 import ProjectComponent from "@/components/ProjectComponent";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const Page = () => {
   useEffect(() => {
@@ -18,6 +19,7 @@ const Page = () => {
       document.body.style.overflowX = "hidden";
     };
   }, []);
+
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const openModal = (imageSrc: string) => {
@@ -30,30 +32,31 @@ const Page = () => {
 
   return (
     <>
-      <div className="m-4 pt-8 md:pl-8">
+      <div className="m-4 pt-8 flex justify-center items-center">
         <Image
-          className="object-cover"
+          className=""
           src="/images/logo.png"
           alt="Logo"
-          width={280}
-          height={200}
+          width={140}
+          height={140}
         />
+        <h4 className="font-light text-3xl m-4 md:text-4xl">
+          Fashion Ecommerce Website
+        </h4>
       </div>
 
-      <div className="m-4 flex justify-between">
-        <div>
-          <h4 className="font-light text-3xl m-4 md:text-4xl">
-            Fashion Ecommerce Website
-          </h4>
-          <p className="m-4 text-xs md:ml-6 md:mb-0 md:text-base">
-            To practice UI/UX and practice pixel-perfect implementation, <br />I
-            choose the fashion brand Dior's website as a sample
-          </p>
-          <br />
-          <div className="flex items-center m-4 md:m-6">
-            <div className="">
-              <Image src="/images/link.png" width={36} height={0} alt="" />
-            </div>
+      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
+      <div className="md:ml-8">
+        <Breadcrumb
+          items={[{ label: "Home", href: "/" }, { label: "Current Project" }]}
+        />
+      </div>
+      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
+
+      <div className="mt-8 flex justify-center">
+        <div className="flex flex-col items-start">
+          <div className="text-xs md:text-base">website</div>
+          <div className="flex items-center">
             <a
               href="https://fashion-web-practice.vercel.app/"
               target="_blank"
@@ -62,40 +65,41 @@ const Page = () => {
             >
               https://fashion-web-practice.vercel.app/
             </a>
-
             <a
               href="https://github.com/Nanamoriyama/fashion-web"
-              className="github-icon hover:duration-300"
+              className="github-icon hover:duration-300 ml-6"
             >
               <Image
                 src="/images/githubicon.png"
                 height={50}
                 width={50}
-                alt=""
+                alt="GitHub"
               />
             </a>
           </div>
-          <p className="m-6 p-4 md:p-14">
-            In my Next.js project, I built a responsive e-commerce site that
-            works also well on mobile devices. The site includes all the
-            essential features of an e-commerce platform, such as a wishlist,
-            cart system, sorting options, and a payment system powered by
-            Stripe.
-            <br />
-            To manage the state, I used Redux for the shopping cart, which
-            involves more complex logic. For the wishlist, I chose useContext,
-            which is more suited for simpler state management.
-            <br />
-            <br />
-            Additionally, I implemented a login system and integrated Stripe for
-            secure payments. This project allowed me to balance complexity and
-            scalability across different components of the app.
-          </p>
-          <ul className="ml-6 p-6">
-            <li>Date: July 2024</li>
-            <li>Category: Front-end</li>
-          </ul>
         </div>
+      </div>
+
+      <div className="m-6 p-4 md:p-14">
+        <p>
+          In my Next.js project, I built a responsive e-commerce site that works
+          also well on mobile devices. The site includes all the essential
+          features of an e-commerce platform, such as a wishlist, cart system,
+          sorting options, and a payment system powered by Stripe.
+          <br />
+          To manage the state, I used Redux for the shopping cart, which
+          involves more complex logic. For the wishlist, I chose useContext,
+          which is more suited for simpler state management.
+          <br />
+          <br />
+          Additionally, I implemented a login system and integrated Stripe for
+          secure payments. This project allowed me to balance complexity and
+          scalability across different components of the app.
+        </p>
+        <ul className="ml-6 p-6">
+          <li>Date: July 2024</li>
+          <li>Category: Front-end</li>
+        </ul>
       </div>
 
       <div className="flex flex-wrap justify-evenly">

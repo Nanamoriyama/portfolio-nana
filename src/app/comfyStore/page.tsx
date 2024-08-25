@@ -55,7 +55,7 @@ const Page = () => {
         {/* 上部セクション */}
         <div className="mt-14 md:pt-10 mx-4">
           <div className="flex flex-row items-center justify-evenly md:ml-12 mb-8">
-            <div className="flex items-center space-x-4">
+            <div className="flex flex-col items-center space-x-4">
               <span className="text-xs">Web page</span>
               <a
                 href="https://store.nanamoriyama.com/"
