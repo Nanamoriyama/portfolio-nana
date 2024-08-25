@@ -25,10 +25,11 @@ const Timeline = () => {
               University in Sydney to further improve my academic English.
             </p>
           </div>
+
           <video
             src="/ichi.mp4"
             controls
-            className="w-full  mr-4 pr-8 md:w-1/3 mt-4 md:mt-0 md:ml-4"
+            className="w-full mr-4 pr-8 md:w-1/3 mt-4 md:mt-0 md:ml-4"
             muted
           />
         </div>

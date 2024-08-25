@@ -21,8 +21,8 @@ const About = () => {
         style={{ backgroundImage: "url('/images/bg3.png')" }}
       >
         <div className="text-stone-900 top-0 right-0 pt-3 flex justify-end items-start transition-colors duration-300 hover:text-blue-800">
-          <span className="text-2xl pr-2">●</span>{" "}
-          <Link href="/" className="text-2xl pr-2">
+          <span className="text-xl md:text-2xl pr-2">●</span>{" "}
+          <Link href="/" className="text-lg md:text-2xl pr-2">
             Projects
           </Link>
         </div>
@@ -45,7 +45,7 @@ const About = () => {
             <div className="absolute top-0 left-0 w-full h-full flex items-center overflow-hidden">
               <div className="marquee-text text-white text-4xl md:text-7xl font-semibold font-serif whitespace-nowrap">
                 A Little Bit
-                <span className="pl-10 text-blue-300"> About Me</span>
+                <span className="text-blue-300"> About Me</span>
               </div>
             </div>
           </div>
