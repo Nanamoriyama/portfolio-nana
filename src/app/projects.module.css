@@ -151,3 +151,37 @@
   bottom: 0;
   overflow: hidden; /* 全体のスクロールを無効に */
 }
+@media (max-width: 767px) {
+  .projectContainer {
+    width: 220px; /* プロジェクトコンテナの幅を小さく */
+    height: 220px; /* プロジェクトコンテナの高さを小さく */
+    margin-bottom: 10px;
+  }
+
+  .link {
+    height: 200px; /* リンクコンテナの高さを小さく */
+    width: 200px; /* リンクコンテナの幅を小さく */
+  }
+
+  .imageWrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .image {
+    object-fit: cover;
+    width: 100%; /* 画像の幅を100%に設定 */
+    height: 100%; /* 画像の高さを100%に設定 */
+  }
+
+  .projectTitle,
+  .projectTool {
+    font-size: 0.9rem; /* 文字サイズを調整 */
+    padding: 10px; /* パディングを調整 */
+    margin-top: 210px; /* 上部に少しの余白を設定 */
+  }
+
+  .projectTool {
+    margin-top: 3px; /* タイトルとツールの間に余白を設定 */
+  }
+}

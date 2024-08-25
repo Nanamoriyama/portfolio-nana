@@ -20,11 +20,11 @@ const About = () => {
         className="relative overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: "url('/images/bg3.png')" }}
       >
-        <div className="text-stone-900 fixed top-0 right-0 pt-3 flex items-center transition-colors duration-300 hover:text-blue-800">
-          <Link href="/" className="text-lg">
+        <div className="text-stone-900 top-0 right-0 pt-3 flex justify-end items-start transition-colors duration-300 hover:text-blue-800">
+          <span className="text-2xl pr-2">●</span>{" "}
+          <Link href="/" className="text-2xl pr-2">
             Projects
           </Link>
-          <MdKeyboardArrowRight className="text-2xl" />
         </div>
 
         {/* nanapの写真とオーバーレイ */}

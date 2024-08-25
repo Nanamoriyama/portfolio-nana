@@ -63,7 +63,7 @@ const Projects = () => {
       {/* New container for text and projects */}
       <div className={styles.textAndProjects}>
         <div ref={scrollContainerRef} className={styles.horizontalScroll}>
-          <div className="whitespace-nowrap flex flex-col justify-center items-center pr-10 mt-28 pb-16 md:gap-5 px-5">
+          <div className="whitespace-nowrap flex flex-col justify-center items-center pr-10 pb-20 md:gap-5 px-5">
             <span className="text-stone-100 font-bold text-xl md:text-7xl">
               F R O N T E N D - D E V E L O P E R
             </span>
@@ -86,7 +86,7 @@ const Projects = () => {
               alt: "Tfc",
               title: "Travel Footprint Calculator",
               className: styles.project1,
-              tool: "React/TechLab Rotterdam",
+              tool: "React",
             },
             {
               href: "/wif",
