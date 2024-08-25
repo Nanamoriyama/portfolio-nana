@@ -56,11 +56,7 @@ const Page = () => {
       <div className="md:ml-8">
         {/* Breadcrumbを追加 */}
         <Breadcrumb
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Projects", href: "/projects" },
-            { label: "Current Project" }, // 現在のページを示す
-          ]}
+          items={[{ label: "Home", href: "/" }, { label: "Current Project" }]}
         />
       </div>
       <hr className="border-t-1 border-gray-300 my-4 mx-10" />

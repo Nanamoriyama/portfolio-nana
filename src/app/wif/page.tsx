@@ -51,11 +51,7 @@ const Page = () => {
       <hr className="border-t-1 border-gray-300 my-4 mx-10" />
       <div className="md:ml-8">
         <Breadcrumb
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Projects", href: "/projects" },
-            { label: "Current Project" },
-          ]}
+          items={[{ label: "Home", href: "/" }, { label: "Current Project" }]}
         />
       </div>
       <hr className="border-t-1 border-gray-300 my-4 mx-10" />

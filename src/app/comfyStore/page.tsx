@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import Footer from "@/components/Footer";
-import { FaGithubSquare } from "react-icons/fa";
 import ProjectComponent from "@/components/ProjectComponent";
+import Breadcrumb from "@/components/Breadcrumb";
+import Image from "next/image";
+import ProductSlider from "@/components/ProductSlider";
+import Footer from "@/components/Footer";
 
 const Page = () => {
   useEffect(() => {
@@ -18,6 +18,7 @@ const Page = () => {
       document.body.style.overflowX = "hidden";
     };
   }, []);
+
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const openModal = (imageSrc: string) => {
@@ -28,38 +29,43 @@ const Page = () => {
     setSelectedImage(null);
   };
 
+  // 画像のリスト
+  const images = [
+    "/images/s1.png",
+    "/images/s2.png",
+    "/images/s3.png",
+    "/images/s4.png",
+  ];
+
   return (
     <>
-      <div className="ml-12 pt-8 md:pl-8">
-        <Image
-          className="object-cover"
-          src="/images/2.png"
-          alt="Comfy Logo"
-          width={100}
-          height={100}
-        />
+      <div className="flex justify-center font-bold text-4xl mt-10 mb-8">
+        Comfy-store
       </div>
 
-      <div className="m-4 flex justify-between">
-        <div>
-          <h4 className="font-light text-3xl ml-8 mt-4 md:text-4xl">
-            Furniture Shop
-          </h4>
+      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
+      <div className="md:ml-8">
+        <Breadcrumb
+          items={[{ label: "Home", href: "/" }, { label: "Current Project" }]}
+        />
+      </div>
+      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
 
-          <br />
-          <div className="flex items-center ml-8 md:m-8">
-            <div className="">
-              <Image src="/images/link.png" width={40} height={0} alt="" />
+      <div className="max-w-screen-lg mx-auto">
+        {/* 上部セクション */}
+        <div className="mt-14 md:pt-10 mx-4">
+          <div className="flex flex-row items-center justify-evenly md:ml-12 mb-8">
+            <div className="flex items-center space-x-4">
+              <span className="text-xs">Web page</span>
+              <a
+                href="https://store.nanamoriyama.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-icon font-bold text-xs md:text-base"
+              >
+                https://store.nanamoriyama.com/
+              </a>
             </div>
-            <a
-              href="https://store.nanamoriyama.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-bold md:text-base"
-            >
-              https://store.nanamoriyama.com/
-            </a>
-
             <a
               href="https://github.com/Nanamoriyama/comfy-store"
               className="github-icon hover:duration-300"
@@ -68,83 +74,25 @@ const Page = () => {
                 src="/images/githubicon.png"
                 height={60}
                 width={60}
-                alt=""
+                alt="GitHub Icon"
               />
             </a>
           </div>
-          <p className="m-6 p-4 md:p-14">
-            In this project, I used React, Vite, and Tailwind CSS. The app
-            fetches furniture products from an API, offering users a smooth
-            experience with features such as:
-            <br />
-            <br />
-            Filter and Search Functionality: Users can filter and search
-            products by name, category, and sort them based on different
-            criteria. <br />
-            <br />
-            Add to Cart Functionality: Utilizing Redux for state management,
-            users can easily add items to their cart, with state persistence
-            across the application.
-            <br />
-            <br /> User Authentication: A full registration and login system was
-            implemented, allowing users to create accounts and access
-            personalized features.
-            <br />
-            <br />
-            Pagination: The application includes a pagination feature, enabling
-            efficient navigation through large sets of product data. These
-            components were made to ensure a smooth and intuitive user
-            experience, leveraging modern tools and frameworks for optimal
-            performance and maintainability.
-          </p>
-          <ul className="ml-6 p-6">
-            <li>Date: May 2024</li>
-            <li>Category: Front-end</li>
-          </ul>
+
+          {/* スライダー */}
+          <div className="md:w-full md:p-14">
+            <div className="font-raleway font-bold flex justify-center">
+              Summary
+            </div>
+            <ProductSlider images={images} title="World In Freelance" />
+          </div>
+
+          <div className="mt-10">
+            <ProjectComponent />
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-evenly">
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/com1.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/com1.png"
-            alt="Screenshot 1"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/com2.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/com2.png"
-            alt="Screenshot 2"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/com3.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/com3.png"
-            alt="Screenshot 3"
-            width={400}
-            height={200}
-          />
-        </div>
-      </div>
-      <div className="mt-10">
-        <ProjectComponent />
-      </div>
       {/* モーダル */}
       {selectedImage && (
         <div
