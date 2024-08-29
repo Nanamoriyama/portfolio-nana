@@ -27,7 +27,7 @@ const About = () => {
   return (
     <>
       <div className="bg-black relative overflow-hidden bg-cover bg-center">
-        <div className="fixed top-0 right-0 p-2 flex items-center gap-2 z-10 border border-stone-200 rounded-full hover:border-red-500">
+        <div className="fixed top-1 right-0 p-2 flex items-center gap-2 z-10 border border-stone-200 rounded-full hover:border-red-500">
           <Link
             href="/"
             className="text-2xl text-stone-200 font-thin px-2 rounded-full hover:bg-opacity-70 transition-colors duration-300"
@@ -46,7 +46,9 @@ const About = () => {
           {/* Top Left: Location */}
           <div className="absolute top-0 left-0 w-1/2 h-1/2 flex justify-center items-center text-stone-200 hover:bg-red-400">
             <div className="flex justify-center flex-col items-center">
-              <h2 className="text-xl font-thin p-8">アムステルダム</h2>
+              <h2 className="text-xl font-thin p-8 whitespace-nowrap">
+                アムステルダム
+              </h2>
               <p>In Amsterdam</p>
             </div>
           </div>

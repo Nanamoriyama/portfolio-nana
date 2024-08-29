@@ -53,7 +53,7 @@ const Projects = () => {
       }}
     >
       {/* Link for "Home" */}
-      <div className="text-stone-200 fixed top-0 right-0 p-2 flex items-center gap-2 transition-colors duration-300 border border-stone-200 rounded-full hover:border-red-500">
+      <div className="text-stone-200 fixed top-1 right-0 p-2 flex items-center gap-2 transition-colors duration-300 border border-stone-200 rounded-full hover:border-red-500">
         <Link href="/about" className="text-xl font-thin px-2">
           About
         </Link>
