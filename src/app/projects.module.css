@@ -4,11 +4,11 @@
   flex-direction: column; /* 子要素を縦に並べる */
   align-items: center; /* 中央揃え */
   overflow: visible;
-  width: 350px;
-  margin-bottom: 200px;
+  width: 280px;
+  margin-bottom: 240px;
   z-index: 1;
   transition: transform 0.3s ease-in-out;
-  top: 80px;
+  top: 30px;
 }
 
 .projectContainer:hover {
@@ -24,15 +24,15 @@
 .project5,
 .project6,
 .project7 {
-  margin: 20px;
+  margin: 40px;
   margin-top: 140px;
 }
 
 .link {
   display: block;
   position: relative;
-  height: 350px;
-  width: 350px;
+  height: 300px;
+  width: 300px;
   background-color: transparent;
 }
 
@@ -56,7 +56,7 @@
 
 .image {
   object-fit: cover;
-  opacity: 0.8; /* 画像を少し透明にする */
+  opacity: 0.9; /* 画像を少し透明にする */
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* ボックスシャドウを追加 */
   transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -69,7 +69,7 @@
   z-index: 2;
   font-weight: bold;
   padding: 10px 0;
-  margin-top: 400px; /* 画像の下にスペースを追加 */
+  margin-top: 350px; /* 画像の下にスペースを追加 */
   font-size: 1rem;
   transition: none;
 }
@@ -155,7 +155,7 @@
   .projectContainer {
     width: 220px; /* プロジェクトコンテナの幅を小さく */
     height: 220px; /* プロジェクトコンテナの高さを小さく */
-    margin-bottom: 10px;
+    top: 130px;
   }
 
   .link {

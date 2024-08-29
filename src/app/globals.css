@@ -142,7 +142,8 @@ html {
   }
 }
 
-.marquee-text {
+.animate-marquee {
   display: inline-block;
-  animation: marquee 30s linear infinite;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
 }

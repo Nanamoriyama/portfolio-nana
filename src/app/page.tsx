@@ -46,16 +46,15 @@ const Projects = () => {
 
   return (
     <div
-      className="bg-black min-h-screen overflow-y-hidden-importantroot-container"
+      className="relative bg-black min-h-screen overflow-y-hidden-importantroot-container"
       style={{
         backgroundColor: "black",
         minHeight: "100vh",
       }}
     >
       {/* Link for "Home" */}
-      <div className="text-stone-200 fixed top-0 right-0 p-5 flex items-center gap-2 transition-colors duration-300 hover:text-blue-800">
-        <span className="text-3xl">●</span>
-        <Link href="/about" className="text-2xl">
+      <div className="text-stone-200 fixed top-0 right-0 p-2 flex items-center gap-2 transition-colors duration-300 border border-stone-200 rounded-full hover:border-red-500">
+        <Link href="/about" className="text-xl font-thin px-2">
           About
         </Link>
       </div>
@@ -149,7 +148,6 @@ const Projects = () => {
                     fill
                     className={`${styles.image}`}
                     priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: "cover" }}
                   />
                 </div>
