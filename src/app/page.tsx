@@ -104,6 +104,14 @@ const Projects = () => {
               tool: "React/NEXT.js",
             },
             {
+              href: "/airbnb",
+              img: "/images/airmain.png",
+              alt: "Airbnb",
+              title: "AirbnbMock",
+              className: styles.project4,
+              tool: "React/NEXT.js",
+            },
+            {
               href: "/phonecase",
               img: "/images/projects4.png",
               alt: "Phonecase",
@@ -111,6 +119,7 @@ const Projects = () => {
               className: styles.project4,
               tool: "React/NEXT.js",
             },
+
             {
               href: "/mimi33",
               img: "/images/projects5.png",
