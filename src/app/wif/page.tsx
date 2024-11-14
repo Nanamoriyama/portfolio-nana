@@ -62,6 +62,14 @@ const Page = () => {
           <div className="flex flex-col items-start ml-4 md:ml-12 mb-8">
             <span className="text-xs">Web page</span>
             <a
+              href="https://wif.ib-tec.co.jp/client"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="github-icon font-bold text-xs mb-4 md:text-base"
+            >
+              https://wif.ib-tec.co.jp/client
+            </a>
+            <a
               href="https://worldinfreelance.ib-tec.co.jp/"
               target="_blank"
               rel="noopener noreferrer"
@@ -71,7 +79,7 @@ const Page = () => {
             </a>
             <span className="text-xs">Company</span>
             <a
-              href="https://worldinfreelance.ib-tec.co.jp/"
+              href="https://ib-tec.co.jp/"
               target="_blank"
               rel="noopener noreferrer"
               className="github-icon font-bold text-xs mb-4 md:text-base"
@@ -82,9 +90,6 @@ const Page = () => {
 
           {/* スライダー */}
           <div className="md:w-full md:p-14">
-            <div className="font-raleway font-bold flex justify-center">
-              Summary
-            </div>
             <ProductSlider images={images} title="World In Freelance" />
           </div>
 
