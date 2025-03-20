@@ -58,12 +58,12 @@ const Page = () => {
             <div className="flex flex-col items-center space-x-4">
               <span className="text-xs">Web page</span>
               <a
-                href="https://store.nanamoriyama.com/"
+                href="https://comfy-store-gilt-one.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="github-icon font-bold text-xs md:text-base"
               >
-                https://store.nanamoriyama.com/
+                https://comfy-store-gilt-one.vercel.app/
               </a>
             </div>
             <a
