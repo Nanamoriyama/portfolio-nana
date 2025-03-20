@@ -66,10 +66,11 @@ const Page = () => {
           </div>
 
           <p className="mt-6 pt-8">
-            In my Next.js project, I built a responsive e-commerce site that
-            works well on mobile devices. The site includes all the essential
-            features of an e-commerce platform, such as a wishlist, cart system,
-            sorting options, and a payment system powered by Stripe.
+            In my Next.js project, I wanted to practice a responsive real
+            e-commerce platform, so I copied the design of Dior website. The
+            site includes all the essential features of an e-commerce platform,
+            such as a wishlist, cart system, sorting options, and a payment
+            system powered by Stripe.
             <br />
             To manage the state, I used Redux for the shopping cart, which
             involves more complex logic. For the wishlist, I chose useContext,
@@ -77,8 +78,7 @@ const Page = () => {
             <br />
             <br />
             Additionally, I implemented a login system and integrated Stripe for
-            secure payments. This project allowed me to balance complexity and
-            scalability across different components of the app.
+            secure payments.
           </p>
 
           <ul className="mt-6 pt-6">
