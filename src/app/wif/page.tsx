@@ -5,6 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Image from "next/image";
 import ProductSlider from "@/components/ProductSlider";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 const Page = () => {
   useEffect(() => {
@@ -38,27 +39,21 @@ const Page = () => {
 
   return (
     <>
-      <div className="flex justify-center m-10 p-2">
-        <Image
-          className="object-cover"
-          src="/images/wiflogo.jpg"
-          alt="WIF Logo"
-          width={300}
-          height={270}
-        />
+      <div className="text-left">
+        <Link
+          href="/"
+          className="pt-6 mt-6 text-xl font-extralight px-2 hover:underline "
+        >
+          Home
+        </Link>
       </div>
-
-      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
-      <div className="md:ml-8">
-        <Breadcrumb
-          items={[{ label: "Home", href: "/" }, { label: "Current Project" }]}
-        />
-      </div>
-      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
 
       <div className="max-w-screen-lg mx-auto">
+        <div className="flex justify-start font-bold m-8 p-2 text-6xl">
+          World in Freelance
+        </div>
         {/* 上部セクション */}
-        <div className="mt-14 md:pt-10 m-4">
+        <div className="mt-14 md:pt-4 m-4">
           <div className="flex flex-col items-start ml-4 md:ml-12 mb-8">
             <span className="text-xs">Web page</span>
             <a

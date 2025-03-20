@@ -5,6 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb"; // 新しいBreadcrumbコン�
 import Image from "next/image";
 import ProductSlider from "@/components/ProductSlider";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 const Page = () => {
   useEffect(() => {
@@ -38,29 +39,19 @@ const Page = () => {
 
   return (
     <>
-      <div className="flex justify-center m-10 p-2">
-        <Image
-          className="object-cover"
-          src="/images/treelogo.png"
-          alt="tree Logo"
-          width={80}
-          height={10}
-        />
+      <div className="text-left">
+        <Link
+          href="/"
+          className="pt-6 mt-6 text-xl font-extralight px-2 hover:underline "
+        >
+          Home
+        </Link>
       </div>
-      <div className="text-2xl flex justify-center font-bold">
-        Travel Footprint Calculator
-      </div>
-
-      {/* ラインを追加 */}
-      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
-      <div className="md:ml-8">
-        {/* Breadcrumbを追加 */}
-        <Breadcrumb
-          items={[{ label: "Home", href: "/" }, { label: "Current Project" }]}
-        />
-      </div>
-      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
       <div className="max-w-screen-lg mx-auto">
+        <h4 className="font-semibold text-5xl mt-4 ml-4 md:text-6xl pt-4 pl-4">
+          Travel Footprint Calculator
+        </h4>
+
         {/* 上部セクション */}
         <div className="mt-14 md:pt-10 m-4 ml-6md:flex md:flex-col md:items-start md:ml-18">
           <div className="flex flex-col justify-center pl-6 items-start mb-8 md:mb-0 md:pl-20">
@@ -69,7 +60,7 @@ const Page = () => {
               href="https://tfc.nanamoriyama.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="github-icon font-bold text-xs mb-4 md:text-base"
+              className="font-bold text-xs mb-4 md:text-base hover:underline"
             >
               https://tfc.nanamoriyama.com/
             </a>
@@ -78,9 +69,16 @@ const Page = () => {
               href="https://medium.com/@techlabs.rotterdam/travel-footprint-calculator-making-your-travels-more-sustainable-d1f9bc52a7fe"
               target="_blank"
               rel="noopener noreferrer"
-              className="github-icon font-bold text-xs mb-4 md:text-base"
+              className="font-bold text-xs mb-4 md:text-base hover:underline"
             >
               https://medium.com/@techlabs...
+            </a>
+
+            <a
+              href="https://github.com/Nanamoriyama/travel-footprint-calculator"
+              className="hover:underline"
+            >
+              Code on GitHub
             </a>
           </div>
 

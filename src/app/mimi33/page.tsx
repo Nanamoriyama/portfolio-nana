@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Footer from "@/components/Footer";
-import { FaGithubSquare } from "react-icons/fa";
 import ProjectComponent from "@/components/ProjectComponent";
+import Breadcrumb from "@/components/Breadcrumb";
+import Link from "next/link";
 
 const Page = () => {
   useEffect(() => {
@@ -18,6 +18,7 @@ const Page = () => {
       document.body.style.overflowX = "hidden";
     };
   }, []);
+
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const openModal = (imageSrc: string) => {
@@ -30,98 +31,86 @@ const Page = () => {
 
   return (
     <>
-      <div className="ml-12 pt-8 md:pl-8">
-        <Image
-          className="object-cover"
-          src="/images/mimilogo.png"
-          alt="Mimi Logo"
-          width={100}
-          height={100}
-        />
+      <div className="text-left">
+        <Link
+          href="/"
+          className="pt-6 mt-6 text-xl font-extralight px-2 hover:underline "
+        >
+          Home
+        </Link>
       </div>
 
-      <div className="m-4 flex justify-between">
-        <div>
-          <h4 className="font-light text-3xl ml-8 mt-4 md:text-4xl">
+      <div className="m-4 flex flex-col md:flex-row justify-between">
+        {/* 左側のセクション */}
+        <div className="md:w-1/2 p-8">
+          <h4 className="font-semibold text-4xl mt-4 md:text-6xl">
             Private Event Bartender Website
           </h4>
 
-          <br />
-          <div className="flex items-center ml-8 md:m-8">
-            <div className="">
-              <Image src="/images/link.png" width={30} height={0} alt="" />
-            </div>
+          <div className="flex items-center mt-6 pt-4">
+            <span className="">Web Page:</span>
             <a
-              href="https://mimi33.nanamoriyama.com/"
+              href="https://mimi-bartender.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-bold md:text-base"
+              className="font-bold md:whitespace-nowrap text-base ml-2 hover:underline"
             >
-              https://mimi33.nanamoriyama.com/
+              https://mimi-bartender.vercel.app/
             </a>
 
             <a
               href="https://github.com/Nanamoriyama/privateBartender/tree/main"
-              className="github-icon hover:duration-300"
+              className="ml-2 hover:underline md:ml-4"
             >
-              <Image
-                src="/images/githubicon.png"
-                height={60}
-                width={60}
-                alt=""
-              />
+              Code on GitHub
             </a>
           </div>
-          <p className="m-6 p-4 md:p-14">
-            For this project, I utilized React Toastify to provide users with
-            elegant notifications and alerts, enhancing the user experience by
-            displaying success, error, and informational messages seamlessly.
-            Additionally, I implemented a cocktail search form that fetches
-            drinks from an API, allowing users to search for and discover
-            various cocktail recipes.
+
+          <p className="mt-6 pt-8">
+            For this project, I implemented a cocktail search form that fetches
+            drinks from a cocktail API, allowing users to search for various
+            cocktail recipes.
             <br />
             <br />
-            To manage server state and efficiently fetch data, I incorporated
-            React Query. This library handles data fetching, caching,
-            synchronization, and background updates, ensuring that the
-            application's data is always up-to-date and providing a smooth,
-            responsive interface. This combination of technologies not only
-            streamlined the development process but also significantly improved
-            the overall performance and user experience of the application.
+            To manage server state and efficiently fetch data, I used React
+            Query.
           </p>
-          <ul className="ml-6 p-6">
+
+          <ul className="mt-6 pt-6">
             <li>Date: May 2024</li>
-            <li>Category: Front-end(little Backend)</li>
+            <li>Category: Front-end</li>
           </ul>
+        </div>
+
+        {/* 右側のセクション */}
+        <div className="md:w-1/2 p-4 flex flex-wrap justify-center">
+          <div
+            className="bg-white border p-6 m-2 cursor-pointer"
+            onClick={() => openModal("/images/m1.png")}
+          >
+            <Image
+              className="object-cover"
+              src="/images/m1.png"
+              alt="Screenshot 1"
+              width={400}
+              height={200}
+            />
+          </div>
+          <div
+            className="bg-white border p-6 m-2 cursor-pointer"
+            onClick={() => openModal("/images/m2.png")}
+          >
+            <Image
+              className="object-cover"
+              src="/images/m2.png"
+              alt="Screenshot 2"
+              width={400}
+              height={200}
+            />
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-evenly">
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/m1.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/m1.png"
-            alt="Screenshot 1"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/m2.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/m2.png"
-            alt="Screenshot 2"
-            width={400}
-            height={200}
-          />
-        </div>
-      </div>
       <div className="mt-10">
         <ProjectComponent />
       </div>

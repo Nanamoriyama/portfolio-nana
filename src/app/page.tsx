@@ -4,7 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./projects.module.css";
 
-const Projects = () => {
+interface Project {
+  href: string;
+  img: string;
+  alt: string;
+  title: string;
+  className: string;
+  tool: string;
+}
+
+const Projects: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -44,6 +53,65 @@ const Projects = () => {
     };
   }, []);
 
+  const projects: Project[] = [
+    {
+      href: "/wif",
+      img: "/images/projects2.png",
+      alt: "Wif",
+      title: "World in Freelance",
+      className: styles.project1,
+      tool: "React/NEXT.js",
+    },
+    {
+      href: "/fashion",
+      img: "/images/projects3.png",
+      alt: "Fashion",
+      title: "Fashion Website",
+      className: styles.project2,
+      tool: "React/NEXT.js",
+    },
+    {
+      href: "/japaneseschool",
+      img: "/images/projects7.png",
+      alt: "Moriyama",
+      title: "Japanese School Moriyama",
+      className: styles.project3,
+      tool: "React/Next.js",
+    },
+    {
+      href: "/phonecase",
+      img: "/images/projects4.png",
+      alt: "Phonecase",
+      title: "Phonecase",
+      className: styles.project4,
+      tool: "React/NEXT.js",
+    },
+    {
+      href: "/mimi33",
+      img: "/images/projects5.png",
+      alt: "Mimi33",
+      title: "Private Bartender",
+      className: styles.project5,
+      tool: "React",
+    },
+    {
+      href: "/tfp",
+      img: "/images/tfc99.png",
+      alt: "Tfc",
+      title: "Travel Footprint Calculator",
+      className: styles.project6,
+      tool: "React",
+    },
+    {
+      href: "/comfyStore",
+      img: "/images/projects6.png",
+      alt: "Comfy",
+      title: "Comfy Store",
+      className: styles.project7,
+      tool: "React",
+    },
+  ];
+
   return (
     <div
       className="relative bg-black min-h-screen overflow-y-hidden-importantroot-container"
@@ -78,73 +146,7 @@ const Projects = () => {
               />
             </div>
           </div>
-          {[
-            {
-              href: "/tfp",
-              img: "/images/tfc99.png",
-              alt: "Tfc",
-              title: "Travel Footprint Calculator",
-              className: styles.project1,
-              tool: "React",
-            },
-            {
-              href: "/wif",
-              img: "/images/projects2.png",
-              alt: "Wif",
-              title: "World in Freelance",
-              className: styles.project2,
-              tool: "React/NEXT.js",
-            },
-            {
-              href: "/fashion",
-              img: "/images/projects3.png",
-              alt: "Fashion",
-              title: "Fashion Website",
-              className: styles.project3,
-              tool: "React/NEXT.js",
-            },
-            {
-              href: "/airbnb",
-              img: "/images/airmain.png",
-              alt: "Airbnb",
-              title: "AirbnbMock",
-              className: styles.project4,
-              tool: "React/NEXT.js",
-            },
-            {
-              href: "/phonecase",
-              img: "/images/projects4.png",
-              alt: "Phonecase",
-              title: "Phonecase",
-              className: styles.project4,
-              tool: "React/NEXT.js",
-            },
-
-            {
-              href: "/mimi33",
-              img: "/images/projects5.png",
-              alt: "Mimi33",
-              title: "Private Bartender",
-              className: styles.project5,
-              tool: "React",
-            },
-            {
-              href: "/comfyStore",
-              img: "/images/projects6.png",
-              alt: "Comfy",
-              title: "Comfy Store",
-              className: styles.project6,
-              tool: "React",
-            },
-            {
-              href: "/japaneseschool",
-              img: "/images/projects7.png",
-              alt: "Moriyama",
-              title: "Japanese School Moriyama",
-              className: styles.project7,
-              tool: "React/Next.js",
-            },
-          ].map((project, index) => (
+          {projects.map((project, index) => (
             <div
               key={index}
               className={`${styles.projectContainer} ${project.className}`}

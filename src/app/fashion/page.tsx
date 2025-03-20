@@ -1,11 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-
 import Footer from "@/components/Footer";
-
 import ProjectComponent from "@/components/ProjectComponent";
-import Breadcrumb from "@/components/Breadcrumb";
+import Link from "next/link";
 
 const Page = () => {
   useEffect(() => {
@@ -32,129 +30,120 @@ const Page = () => {
 
   return (
     <>
-      <div className="m-4 pt-8 flex justify-center items-center">
-        <Image
-          className=""
-          src="/images/logo.png"
-          alt="Logo"
-          width={140}
-          height={140}
-        />
-        <h4 className="font-light text-3xl m-4 md:text-4xl">
-          Fashion Ecommerce Website
-        </h4>
+      <div className="text-left">
+        <Link
+          href="/"
+          className="pt-6 mt-6 text-xl font-extralight px-2 hover:underline"
+        >
+          Home
+        </Link>
       </div>
 
-      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
-      <div className="md:ml-8">
-        <Breadcrumb
-          items={[{ label: "Home", href: "/" }, { label: "Current Project" }]}
-        />
-      </div>
-      <hr className="border-t-1 border-gray-300 my-4 mx-10" />
+      <div className="m-4 flex flex-col md:flex-row justify-between">
+        {/* 左側のセクション（テキスト） */}
+        <div className="md:w-1/2 p-8">
+          <h4 className="font-bold text-4xl mt-4 md:text-6xl">
+            Fashion Ecommerce Website
+          </h4>
 
-      <div className="mt-8 flex justify-center">
-        <div className="flex flex-col items-start">
-          <div className="text-xs md:text-base">website</div>
-          <div className="flex items-center">
+          <div className="flex items-center mt-6 pt-4">
+            <span>Web Page:</span>
             <a
               href="https://fashion-web-practice.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-bold md:text-base"
+              className="font-bold md:whitespace-nowrap text-base ml-2 hover:underline"
             >
               https://fashion-web-practice.vercel.app/
             </a>
+
             <a
               href="https://github.com/Nanamoriyama/fashion-web"
-              className="github-icon hover:duration-300 ml-6"
+              className="ml-2 hover:underline md:ml-4"
             >
-              <Image
-                src="/images/githubicon.png"
-                height={50}
-                width={50}
-                alt="GitHub"
-              />
+              Code on GitHub
             </a>
+          </div>
+
+          <p className="mt-6 pt-8">
+            In my Next.js project, I built a responsive e-commerce site that
+            works well on mobile devices. The site includes all the essential
+            features of an e-commerce platform, such as a wishlist, cart system,
+            sorting options, and a payment system powered by Stripe.
+            <br />
+            To manage the state, I used Redux for the shopping cart, which
+            involves more complex logic. For the wishlist, I chose useContext,
+            which is more suited for simpler state management.
+            <br />
+            <br />
+            Additionally, I implemented a login system and integrated Stripe for
+            secure payments. This project allowed me to balance complexity and
+            scalability across different components of the app.
+          </p>
+
+          <ul className="mt-6 pt-6">
+            <li>Date: July 2024</li>
+            <li>Category: Front-end</li>
+          </ul>
+        </div>
+
+        {/* 右側のセクション（画像） */}
+        <div className="md:w-1/2 p-4 flex flex-wrap justify-center">
+          <div
+            className="bg-white border p-6 m-2 cursor-pointer"
+            onClick={() => openModal("/images/d1.png")}
+          >
+            <Image
+              className="object-cover"
+              src="/images/d1.png"
+              alt="Screenshot 1"
+              width={400}
+              height={200}
+            />
+          </div>
+          <div
+            className="bg-white border p-6 m-2 cursor-pointer"
+            onClick={() => openModal("/images/d2.png")}
+          >
+            <Image
+              className="object-cover"
+              src="/images/d2.png"
+              alt="Screenshot 2"
+              width={400}
+              height={200}
+            />
+          </div>
+          <div
+            className="bg-white border p-6 m-2 cursor-pointer"
+            onClick={() => openModal("/images/d3.png")}
+          >
+            <Image
+              className="object-cover"
+              src="/images/d3.png"
+              alt="Screenshot 3"
+              width={400}
+              height={200}
+            />
+          </div>
+          <div
+            className="bg-white border p-6 m-2 cursor-pointer"
+            onClick={() => openModal("/images/d4.png")}
+          >
+            <Image
+              className="object-cover"
+              src="/images/d4.png"
+              alt="Screenshot 4"
+              width={400}
+              height={200}
+            />
           </div>
         </div>
       </div>
 
-      <div className="m-6 p-4 md:p-14">
-        <p>
-          In my Next.js project, I built a responsive e-commerce site that works
-          also well on mobile devices. The site includes all the essential
-          features of an e-commerce platform, such as a wishlist, cart system,
-          sorting options, and a payment system powered by Stripe.
-          <br />
-          To manage the state, I used Redux for the shopping cart, which
-          involves more complex logic. For the wishlist, I chose useContext,
-          which is more suited for simpler state management.
-          <br />
-          <br />
-          Additionally, I implemented a login system and integrated Stripe for
-          secure payments. This project allowed me to balance complexity and
-          scalability across different components of the app.
-        </p>
-        <ul className="ml-6 p-6">
-          <li>Date: July 2024</li>
-          <li>Category: Front-end</li>
-        </ul>
-      </div>
-
-      <div className="flex flex-wrap justify-evenly">
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/d1.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/d1.png"
-            alt="Screenshot 1"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/d2.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/d2.png"
-            alt="Screenshot 2"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/d3.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/d3.png"
-            alt="Screenshot 3"
-            width={400}
-            height={200}
-          />
-        </div>
-        <div
-          className="bg-white border p-6 m-2 cursor-pointer"
-          onClick={() => openModal("/images/d4.png")}
-        >
-          <Image
-            className="object-cover"
-            src="/images/d4.png"
-            alt="Screenshot 4"
-            width={400}
-            height={200}
-          />
-        </div>
-      </div>
       <div className="mt-10">
         <ProjectComponent />
       </div>
+
       {/* モーダル */}
       {selectedImage && (
         <div
