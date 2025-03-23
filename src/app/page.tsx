@@ -55,6 +55,14 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
+      href: "/wif_client",
+      img: "/images/wifclient1.png",
+      alt: "Wif_client",
+      title: "World in Freelance",
+      className: styles.project1,
+      tool: "React/NEXT.js",
+    },
+    {
       href: "/wif",
       img: "/images/projects2.png",
       alt: "Wif",
