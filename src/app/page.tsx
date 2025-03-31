@@ -153,6 +153,14 @@ const Projects: React.FC = () => {
                 style={{ objectFit: "contain" }}
               />
             </div>
+            <div className="text-stone-200  fixed top-1 right-24 p-2 flex items-center gap-2 transition-colors duration-300 border border-stone-200 rounded-full hover:border-red-500">
+              <Link
+                href="https://nana-blog.vercel.app/"
+                className="text-xl font-thin px-2"
+              >
+                Blog
+              </Link>
+            </div>
           </div>
           {projects.map((project, index) => (
             <div

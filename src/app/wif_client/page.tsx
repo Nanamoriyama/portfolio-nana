@@ -83,7 +83,7 @@ const Page = () => {
         <div className="md:w-1/2 p-4 flex flex-wrap justify-center">
           <div
             className="bg-white border p-6 m-2 cursor-pointer"
-            onClick={() => openModal("/images/d1.png")}
+            onClick={() => openModal("/images/wifclient1.png")}
           >
             <Image
               className="object-cover"
@@ -95,7 +95,7 @@ const Page = () => {
           </div>
           <div
             className="bg-white border p-6 m-2 cursor-pointer"
-            onClick={() => openModal("/images/d2.png")}
+            onClick={() => openModal("/images/wifclient2.png")}
           >
             <Image
               className="object-cover"
@@ -107,7 +107,7 @@ const Page = () => {
           </div>
           <div
             className="bg-white border p-6 m-2 cursor-pointer"
-            onClick={() => openModal("/images/d3.png")}
+            onClick={() => openModal("/images/wifclient3.png")}
           >
             <Image
               className="object-cover"

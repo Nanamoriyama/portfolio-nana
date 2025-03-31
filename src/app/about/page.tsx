@@ -82,6 +82,7 @@ const About = () => {
                   <span className="block md:inline">CSS3</span>
                 </div>
                 <div className="w-1/2 md:w-auto text-center space-x-1">
+                  <span className="block md:inline">React Native</span>
                   <span className="block md:inline">JavaScript (ES6+)</span>
                   <span className="block md:inline">TailwindCSS</span>
                   <span className="block md:inline">SCSS</span>
@@ -103,15 +104,14 @@ const About = () => {
                   <span className="block md:inline">Express</span>
                   <span className="block md:inline">Axios</span>
                   <span className="block md:inline">RESTful APIs</span>
+                  <span className="block md:inline">PostgreSQL</span>
                   <span className="block md:inline">JSON</span>
                   <span className="block md:inline">Git</span>
-                  <span className="block md:inline">Firebase</span>
                 </div>
                 <div className="w-1/2 md:w-auto text-center space-x-1">
+                  <span className="block md:inline">Firebase</span>
                   <span className="block md:inline">MongoDB</span>
-                  <span className="block md:inline">Auth0</span>
-                  <span className="block md:inline">Stripe</span>
-                  <span className="block md:inline">OAuth</span>
+
                   <span className="block md:inline">Jest (unit testing)</span>
                 </div>
               </div>
