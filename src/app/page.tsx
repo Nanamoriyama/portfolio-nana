@@ -173,37 +173,39 @@ const Projects: React.FC = () => {
             </div>
           </div>
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className={`${styles.projectContainer} ${project.className}`}
-            >
-              <Link
-                href={project.externalLink!}
-                className={styles.link}
-                target="_blank"
-                rel="noopener noreferrer"
+            <div className="">
+              <div
+                key={index}
+                className={`${styles.projectContainer} ${project.className}`}
               >
-                <div className={styles.imageWrapper}>
-                  <Image
-                    src={project.img}
-                    alt={project.alt}
-                    fill
-                    className={`${styles.image}`}
-                    priority
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
-                <h4 className={`${styles.projectTitle}`}>{project.title}</h4>
-                <h4 className={`${styles.projectTool}`}>{project.tool}</h4>
+                <Link
+                  href={project.externalLink!}
+                  className={styles.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className={styles.imageWrapper}>
+                    <Image
+                      src={project.img}
+                      alt={project.alt}
+                      fill
+                      className={`${styles.image}`}
+                      priority
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <h4 className={`${styles.projectTitle}`}>{project.title}</h4>
+                  <h4 className={`${styles.projectTool}`}>{project.tool}</h4>
 
-                <div className={styles.overlay}></div>
-              </Link>
-              <Link
-                href={project.href}
-                className="inline-block mt-10 md:mt-5 px-4 py-1 text-sm border border-white text-white hover:bg-white hover:text-black transition"
-              >
-                Detail
-              </Link>
+                  <div className={styles.overlay}></div>
+                </Link>
+                <Link
+                  href={project.href}
+                  className="inline-block mt-10 md:mt-5 px-4 py-1 text-sm border border-white text-white hover:bg-white hover:text-black transition"
+                >
+                  Detail
+                </Link>
+              </div>
             </div>
           ))}
         </div>
