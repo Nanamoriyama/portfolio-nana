@@ -11,6 +11,7 @@ interface Project {
   title: string;
   className: string;
   tool: string;
+  externalLink?: string;
 }
 
 const Projects: React.FC = () => {
@@ -61,6 +62,7 @@ const Projects: React.FC = () => {
       title: "World in Freelance",
       className: styles.project1,
       tool: "React/NEXT.js",
+      externalLink: "https://wif.ib-tec.co.jp/client",
     },
     {
       href: "/wif",
@@ -69,6 +71,7 @@ const Projects: React.FC = () => {
       title: "World in Freelance",
       className: styles.project1,
       tool: "React/NEXT.js",
+      externalLink: "https://worldinfreelance.ib-tec.co.jp/",
     },
     {
       href: "/fashion",
@@ -77,6 +80,16 @@ const Projects: React.FC = () => {
       title: "Fashion Website",
       className: styles.project2,
       tool: "React/NEXT.js",
+      externalLink: "https://fashion-web-practice.vercel.app/",
+    },
+    {
+      href: "/botanica",
+      img: "/images/botanica.png",
+      alt: "Fashion",
+      title: "Online Plants Store",
+      className: styles.project2,
+      tool: "React/NEXT.js",
+      externalLink: "https://botanica-seven.vercel.app/",
     },
     {
       href: "/japaneseschool",
@@ -85,6 +98,7 @@ const Projects: React.FC = () => {
       title: "Japanese School Moriyama",
       className: styles.project3,
       tool: "React/Next.js",
+      externalLink: "https://moriyama.vercel.app/",
     },
     {
       href: "/phonecase",
@@ -93,6 +107,7 @@ const Projects: React.FC = () => {
       title: "Phonecase",
       className: styles.project4,
       tool: "React/NEXT.js",
+      externalLink: "https://phone-case-tau.vercel.app/",
     },
     {
       href: "/mimi33",
@@ -101,15 +116,9 @@ const Projects: React.FC = () => {
       title: "Private Bartender",
       className: styles.project5,
       tool: "React",
+      externalLink: "https://mimi-bartender.vercel.app/",
     },
-    {
-      href: "/tfp",
-      img: "/images/tfc99.png",
-      alt: "Tfc",
-      title: "Travel Footprint Calculator",
-      className: styles.project6,
-      tool: "React",
-    },
+
     {
       href: "/comfyStore",
       img: "/images/projects6.png",
@@ -117,6 +126,7 @@ const Projects: React.FC = () => {
       title: "Comfy Store",
       className: styles.project7,
       tool: "React",
+      externalLink: "https://comfy-store-gilt-one.vercel.app/",
     },
   ];
 
@@ -167,7 +177,12 @@ const Projects: React.FC = () => {
               key={index}
               className={`${styles.projectContainer} ${project.className}`}
             >
-              <Link href={project.href} className={`${styles.link}`}>
+              <Link
+                href={project.externalLink!}
+                className={styles.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div className={styles.imageWrapper}>
                   <Image
                     src={project.img}
@@ -180,7 +195,14 @@ const Projects: React.FC = () => {
                 </div>
                 <h4 className={`${styles.projectTitle}`}>{project.title}</h4>
                 <h4 className={`${styles.projectTool}`}>{project.tool}</h4>
+
                 <div className={styles.overlay}></div>
+              </Link>
+              <Link
+                href={project.href}
+                className="inline-block mt-10 md:mt-5 px-4 py-1 text-sm border border-white text-white hover:bg-white hover:text-black transition"
+              >
+                Detail
               </Link>
             </div>
           ))}

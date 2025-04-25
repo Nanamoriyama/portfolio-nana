@@ -75,7 +75,7 @@
 }
 
 .projectTool {
-  margin-top: 5px; /* タイトルとツールの間に最小限の余白を追加 */
+  margin-top: 1px; /* タイトルとツールの間に最小限の余白を追加 */
 }
 
 @media (min-width: 768px) {
@@ -178,7 +178,7 @@
   .projectTool {
     font-size: 0.9rem; /* 文字サイズを調整 */
     padding: 10px; /* パディングを調整 */
-    margin-top: 210px; /* 上部に少しの余白を設定 */
+    margin-top: 290px; /* 上部に少しの余白を設定 */
   }
 
   .projectTool {

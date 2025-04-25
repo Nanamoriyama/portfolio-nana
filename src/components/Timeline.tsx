@@ -45,7 +45,7 @@ const Timeline = () => {
                 2017
               </h2>
               <p className="p-2 pr-10 mr-2 md:p-14 fade-text text-3xl">
-                {"After graduating from university, I decided to move to the Netherlands. I was teaching Japanese and helped launch two Japanese restaurants in Utrecht. I created websites for my language school led me to dive into web development."
+                {"After graduating from university, I decided to move to the Netherlands. I was teaching Japanese and working as a restaurant operations manager in Utrecht. I created websites for my language school led me to dive into web development."
                   .split(" ")
                   .map((word, index) => (
                     <span key={index} style={{ marginRight: "0.5rem" }}>
@@ -67,7 +67,7 @@ const Timeline = () => {
                 2023
               </h2>
               <p className="p-2 pr-8 mr-2 md:p-14 fade-text text-3xl">
-                {"I started my tech journey with the Web Developer Bootcamp, where I learned the basic of web development. I am continuously learning the field. In addition, to improve my problem-solving skills, I do LeetCode daily. I stay productive and continuously improve my skills."
+                {"I began my tech journey with the Web Developer Bootcamp, where I learned the fundamentals of web development. Since then, I’ve been continuously learning and exploring the field. I really enjoy turning cool ideas into real websites and interactive experiences. Bringing creative concepts to life is something I’m passionate about! And I love sharing and talking about those ideas with others. I'm always looking for ways to stay productive and keep improving my skills every day."
                   .split(" ")
                   .map((word, index) => (
                     <span key={index} style={{ marginRight: "0.5rem" }}>
